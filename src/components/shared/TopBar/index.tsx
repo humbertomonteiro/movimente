@@ -6,7 +6,7 @@ export default function TopoBar() {
       {/* <span>Contagem regressiva para pré-venda</span> */}
       <span>GARANTA AGORA MESMO SEU INGRESSO.</span>
 
-      <a href="#ingressos">Aproveitar agora</a>
+      <a href="#tickets">Aproveitar agora</a>
     </div>
   );
 }

@@ -141,7 +141,7 @@ export default function CommonQuestions() {
     "https://api.whatsapp.com/send?phone=5585992742323&text=Ol%C3%A1%2C%20equipe%20autismoAutismo!%20Estou%20interessado(a)%20no%20evento%20e%20gostaria%20de%20obter%20mais%20informa%C3%A7%C3%B5es.%20%0A%0APoderiam%20me%20ajudar%20com%20detalhes%20sobre%20inscri%C3%A7%C3%B5es%2C%20programa%C3%A7%C3%A3o%2C%20palestrantes%20e%20outras%20informa%C3%A7%C3%B5es%20relevantes%3F%20Obrigado(a)!%0A%0A";
 
   return (
-    <section className={styles.section} id="duvidas">
+    <section className={styles.section} id="faq">
       <h2 className={styles.title}>Perguntas Frequentes</h2>
       <div className={styles.backgroundOverlay}></div>
 

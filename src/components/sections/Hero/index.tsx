@@ -25,7 +25,7 @@ export default function Hero() {
             </div>
           </div>
           <div className={styles.buttons}>
-            <ButtonCTA link={"#ingressos"} text={"Garanta sua vaga agora"} />
+            <ButtonCTA link={"#tickets"} text={"Garanta sua vaga agora"} />
           </div>
         </div>
         <div className={styles.image}>

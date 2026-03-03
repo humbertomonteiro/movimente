@@ -68,7 +68,7 @@ export default function Tickets() {
   // };
 
   return (
-    <section className={styles.section} id="ingressos">
+    <section className={styles.section} id="tickets">
       <AnimationCirclesBg />
       <div className={styles.container}>
         {/* Header */}

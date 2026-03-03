@@ -11,6 +11,7 @@ import {
   FaHeart,
 } from "react-icons/fa";
 import logoFooter from "../../../assets/imgs/logos/logo-movemente.png";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -42,8 +43,8 @@ export default function Footer() {
     { text: "Home", url: "/" },
     { text: "Sobre o evento", url: "#about" },
     { text: "Palestrantes", url: "#speakers" },
-    { text: "Ingressos", url: "#ingressos" },
-    { text: "Perguntas frequentes", url: "#duvidas" },
+    { text: "Ingressos", url: "#tickets" },
+    { text: "Perguntas frequentes", url: "#faq" },
   ];
 
   const contactInfo = [
@@ -167,9 +168,7 @@ export default function Footer() {
             Feito com <FaHeart className={styles.heartIcon} /> por Humdev
           </p>
           <div className={styles.policyLinks}>
-            <a href="#politica">Política de Privacidade</a>
-            <span className={styles.separator}>|</span>
-            <a href="#termos">Termos de Uso</a>
+            <Link to="/politica-privacidade">Política de Privacidade</Link>
           </div>
         </div>
       </div>
