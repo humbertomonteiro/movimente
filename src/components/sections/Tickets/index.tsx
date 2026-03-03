@@ -1,5 +1,5 @@
 import styles from "./Tickets.module.css";
-import { FaCheck, FaUsers, FaTicketAlt, FaCreditCard } from "react-icons/fa";
+import { FaCheck, FaUsers, FaTicketAlt } from "react-icons/fa";
 import { GiBrain } from "react-icons/gi";
 import AnimationCirclesBg from "../../shared/AnimationCirclesBg";
 import ButtonCTA from "../../shared/ButtonCTA";
@@ -60,12 +60,12 @@ export default function Tickets() {
     });
   };
 
-  const calculateInstallment = (price: number) => {
-    return (price / 12).toLocaleString("pt-BR", {
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 2,
-    });
-  };
+  // const calculateInstallment = (price: number) => {
+  //   return (price / 12).toLocaleString("pt-BR", {
+  //     minimumFractionDigits: 2,
+  //     maximumFractionDigits: 2,
+  //   });
+  // };
 
   return (
     <section className={styles.section} id="ingressos">

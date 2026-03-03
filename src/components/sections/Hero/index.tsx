@@ -1,7 +1,6 @@
 import styles from "./Hero.module.css";
 import ButtonCTA from "../../shared/ButtonCTA";
 import bg from "../../../assets/imgs/bgs/bg.png";
-import { IoIosImages } from "react-icons/io";
 import logo from "../../../assets/imgs/logos/logo-movemente.png";
 
 export default function Hero() {
@@ -27,13 +26,6 @@ export default function Hero() {
           </div>
           <div className={styles.buttons}>
             <ButtonCTA link={"#ingressos"} text={"Garanta sua vaga agora"} />
-            {/* <ButtonCTA
-              link={"#ingressos"}
-              text={"texto do botão"}
-              data-color="secondary"
-              target="_blank"
-              icon={<IoIosImages />}
-            /> */}
           </div>
         </div>
         <div className={styles.image}>
