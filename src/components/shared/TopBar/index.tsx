@@ -1,4 +1,4 @@
-import styles from "./topBar.module.css";
+import styles from "./TopBar.module.css";
 
 export default function TopoBar() {
   return (
