@@ -1,0 +1,487 @@
+.footer {
+  background: linear-gradient(135deg, #f8faff 0%, #ffffff 100%);
+  position: relative;
+  padding: 6.5rem 0 2rem;
+  border-top: 1px solid rgba(3, 76, 140, 0.1);
+}
+
+/* Onda decorativa superior */
+.footerWave {
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.footerWave svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 60px;
+}
+
+/* Container */
+.container {
+  width: 1400px;
+  max-width: 90%;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* Grid principal */
+.grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1.5fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+/* Colunas */
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Logo */
+.logo {
+  max-width: 180px;
+  margin-bottom: 1.5rem;
+}
+
+/* Descrição */
+.description {
+  color: var(--color-text-gray);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+
+/* Redes sociais */
+.social {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.socialIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(3, 76, 140, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+.socialIcon:hover {
+  background: var(--color-primary);
+  color: white;
+  transform: translateY(-3px);
+}
+
+/* Títulos das colunas */
+.columnTitle {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.columnTitle::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background: var(--color-accent);
+  border-radius: 3px;
+}
+
+/* Listas de links */
+.linksList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.linksList li {
+  margin-bottom: 0.8rem;
+}
+
+.link {
+  color: var(--color-text-gray);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  font-size: 0.95rem;
+  position: relative;
+  padding-left: 0;
+}
+
+.link:hover {
+  color: var(--color-accent);
+  padding-left: 5px;
+}
+
+/* Lista de contato */
+.contactList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contactList li {
+  margin-bottom: 1rem;
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--color-text-gray);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+
+.contactItem:hover {
+  color: var(--color-primary);
+}
+
+.contactIcon {
+  width: 32px;
+  height: 32px;
+  background: rgba(3, 76, 140, 0.05);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-accent);
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.contactItem:hover .contactIcon {
+  background: var(--color-primary);
+  color: white;
+}
+
+/* Card do evento */
+.eventCard {
+  background: white;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(3, 76, 140, 0.1);
+}
+
+.eventItem {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  align-items: flex-start;
+}
+
+.eventIcon {
+  font-size: 1.3rem;
+  color: var(--color-accent);
+  margin-top: 0.2rem;
+}
+
+.eventItem div {
+  display: flex;
+  flex-direction: column;
+}
+
+.eventItem strong {
+  color: var(--color-primary);
+  font-size: 1rem;
+  margin-bottom: 0.2rem;
+}
+
+.eventItem span {
+  color: var(--color-text-gray);
+  font-size: 0.9rem;
+}
+
+.eventButton {
+  display: inline-block;
+  background: var(--color-accent);
+  color: white;
+  text-decoration: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 40px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  transition: all 0.3s ease;
+  text-align: center;
+  width: 100%;
+}
+
+.eventButton:hover {
+  background: var(--color-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(3, 76, 140, 0.2);
+}
+
+/* Selos de confiança */
+.trustBadges {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  /* margin-bottom: 3rem; */
+  padding: 1.5rem 0;
+  border-top: 1px solid rgba(3, 76, 140, 0.1);
+  /* border-bottom: 1px solid rgba(3, 76, 140, 0.1); */
+  flex-wrap: wrap;
+}
+
+.badge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-text-gray);
+  font-size: 0.9rem;
+}
+
+.badge span {
+  font-size: 1.2rem;
+}
+
+/* Newsletter */
+.newsletter {
+  background: linear-gradient(135deg, var(--color-primary), #034c8c);
+  border-radius: 60px;
+  padding: 2rem 3rem;
+  margin-bottom: 3rem;
+  box-shadow: 0 10px 30px rgba(3, 76, 140, 0.2);
+}
+
+.newsletterContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.newsletterContent h4 {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.newsletterForm {
+  display: flex;
+  gap: 0.5rem;
+  flex: 1;
+  max-width: 500px;
+}
+
+.newsletterInput {
+  flex: 1;
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 40px;
+  font-size: 0.95rem;
+  outline: none;
+}
+
+.newsletterInput:focus {
+  box-shadow: 0 0 0 3px rgba(242, 93, 7, 0.3);
+}
+
+.newsletterButton {
+  background: var(--color-accent);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 40px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.newsletterButton:hover {
+  background: #f25d07;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Barra inferior */
+.bottomBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(3, 76, 140, 0.1);
+}
+
+.copyright {
+  color: var(--color-text-gray);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.credit {
+  color: var(--color-text-gray);
+  font-size: 0.9rem;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.heartIcon {
+  color: var(--color-tertiary);
+  animation: heartbeat 1.5s ease infinite;
+}
+
+.policyLinks {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.policyLinks a {
+  color: var(--color-text-gray);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
+}
+
+.policyLinks a:hover {
+  color: var(--color-accent);
+}
+
+.separator {
+  color: var(--color-text-gray);
+  font-size: 0.9rem;
+}
+
+/* Animações */
+@keyframes heartbeat {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.1);
+  }
+  35% {
+    transform: scale(1);
+  }
+  45% {
+    transform: scale(1.05);
+  }
+  55% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Responsividade */
+@media (max-width: 1200px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .newsletterContent {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .newsletterForm {
+    max-width: 100%;
+  }
+
+  .bottomBar {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 700px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer {
+    padding: 3rem 0 1.5rem;
+  }
+
+  .logo {
+    margin: 0 auto;
+    padding: 2rem 0 1rem 0;
+  }
+
+  .trustBadges {
+    gap: 1rem;
+  }
+
+  .badge {
+    width: calc(50% - 0.5rem);
+    justify-content: center;
+  }
+
+  .newsletter {
+    padding: 1.5rem;
+    border-radius: 30px;
+  }
+
+  .newsletterForm {
+    flex-direction: column;
+  }
+
+  .newsletterButton {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .social {
+    justify-content: center;
+  }
+
+  .columnTitle::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .columnTitle {
+    text-align: center;
+  }
+
+  .description {
+    text-align: center;
+  }
+}
+
+/* Prefers Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .heartIcon,
+  .socialIcon,
+  .link,
+  .eventButton,
+  .newsletterButton {
+    animation: none;
+    transition: none;
+  }
+}
