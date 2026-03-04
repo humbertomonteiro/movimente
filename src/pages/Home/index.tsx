@@ -10,6 +10,7 @@ import About from "../../components/sections/About";
 import Location from "../../components/sections/Location";
 import Testimonials from "../../components/sections/Testimonials";
 import AnimationCirclesBg from "../../components/shared/AnimationCirclesBg";
+import Supporters from "../../components/sections/Supporters";
 
 export default function Home() {
   return (
@@ -23,6 +24,7 @@ export default function Home() {
       <Testimonials />
       <Location />
       <CommonQuestions />
+      <Supporters />
       <Footer />
       <AnimationCirclesBg />
     </div>

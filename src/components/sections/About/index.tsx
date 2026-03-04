@@ -5,7 +5,13 @@ import { TbTargetArrow } from "react-icons/tb";
 
 import aboutImage from "../../../assets/imgs/shared/event.jpg";
 
+import { useEvent } from "../../../contexts/EventContexts";
+
 export default function About() {
+  const { events } = useEvent();
+
+  const event = events.filter((e) => e.id === "movemente2026")[0];
+
   return (
     <section className={styles.section}>
       {/* Elementos decorativos de fundo */}
@@ -34,14 +40,14 @@ export default function About() {
               <div className={styles.floatingItem}>
                 <FaCalendar />
                 <div>
-                  <strong>13 e 14 de Junho</strong>
+                  <strong>{event.date}</strong>
                   <span>2026</span>
                 </div>
               </div>
               <div className={styles.floatingItem}>
                 <FaLocationArrow />
                 <div>
-                  <strong>Hotel Legal</strong>
+                  <strong>{event.location}</strong>
                   <span>São Luís - MA</span>
                 </div>
               </div>

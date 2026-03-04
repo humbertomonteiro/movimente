@@ -260,7 +260,7 @@ export default function Speakers() {
         </Swiper>
 
         {/* Pagination container */}
-        <div className={styles.pagination}></div>
+        {/* <div className={styles.pagination}></div> */}
 
         {/* CTA Button */}
         <div className={styles.ctaContainer} data-aos="fade-up">

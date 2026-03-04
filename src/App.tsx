@@ -1,5 +1,6 @@
 import { BrowserRouter } from "react-router-dom";
 import RoutesApp from "./routes/RoutesApp";
+import { EventProvider } from "./contexts/EventContexts";
 
 import Aos from "aos";
 import "aos/dist/aos.css";
@@ -17,7 +18,9 @@ function App() {
   }, []);
   return (
     <BrowserRouter>
-      <RoutesApp />
+      <EventProvider>
+        <RoutesApp />
+      </EventProvider>
     </BrowserRouter>
   );
 }

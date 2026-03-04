@@ -4,7 +4,12 @@ import bg from "../../../assets/imgs/bgs/bg.png";
 import logo from "../../../assets/imgs/logos/logo-movemente.png";
 import GridOverlay from "../../shared/GridOverlay";
 
+import { useEvent } from "../../../contexts/EventContexts";
+
 export default function Hero() {
+  const { events } = useEvent();
+
+  const event = events.filter((e) => e.id === "movemente2026")[0];
   return (
     <section className={styles.section}>
       <GridOverlay />
@@ -20,9 +25,9 @@ export default function Hero() {
               Estratégias que funcionam: da teoria à prática.
             </p>
             <div className={styles.highlight}>
-              <span className={styles.highlightMobile}>Em Junho de 2026</span>{" "}
+              <span className={styles.highlightMobile}>{event.date}</span>{" "}
               <span className={styles.divider}>|</span>{" "}
-              <span className={styles.highlightMobile}>Hotel Legal</span>
+              <span className={styles.highlightMobile}>{event.location}</span>
             </div>
           </div>
           <div className={styles.buttons}>

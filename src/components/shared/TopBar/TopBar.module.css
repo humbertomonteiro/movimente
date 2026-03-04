@@ -6,7 +6,7 @@
   top: 0;
   right: 0;
   left: 0;
-  background-color: var(--bg-transparent-blue);
+  background-color: var(--bg-accent-transparent);
   z-index: 7;
   padding: 0.5rem 2rem;
   border-bottom: var(--border-white);
@@ -37,7 +37,7 @@
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
   background-image: var(--bg-gradient-primary);
-  box-shadow: 0 4px 15px 0 rgba(252, 104, 110, 0.75);
+  box-shadow: 1px 1px 8px 0 rgba(205, 104, 252, 0.75);
 }
 
 .container a:hover {

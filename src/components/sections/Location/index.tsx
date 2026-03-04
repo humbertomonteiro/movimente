@@ -10,29 +10,31 @@ import { HiOutlineBuildingOffice, HiOutlineMapPin } from "react-icons/hi2";
 import { FaRegCopy } from "react-icons/fa";
 import GridOverlay from "../../shared/GridOverlay";
 
-// import hotelImage from "../../../assets/imgs/location/hotel-legal.jpg";
-// import mapImage from "../../../assets/imgs/location/map.jpg";
-const hotelImage =
-  "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/16/1a/ea/54/hotel-presidente-4s.jpg?w=900&h=500&s=1";
-const mapImage =
-  "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/16/1a/ea/54/hotel-presidente-4s.jpg?w=900&h=500&s=1";
+import { useEvent } from "../../../contexts/EventContexts";
+
+// const hotelImage =
+//   "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/16/1a/ea/54/hotel-presidente-4s.jpg?w=900&h=500&s=1";
+// const mapImage =
+//   "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/16/1a/ea/54/hotel-presidente-4s.jpg?w=900&h=500&s=1";
 
 export default function Location() {
+  const { events } = useEvent();
+
+  const event = events.filter((e) => e.id === "movemente2026")[0];
+
   const handleCopyAddress = () => {
-    const address =
-      "Av. dos Holandeses, 123 - Ponta d'Areia, São Luís - MA, 65075-480";
+    const address = event.address;
     navigator.clipboard.writeText(address);
     alert("Endereço copiado!");
   };
 
   const openMaps = () => {
-    const url =
-      "https://maps.google.com/?q=Av.+dos+Holandeses,+123+-+Ponta+d'Areia,+São+Luís+-+MA";
+    const url = event.linkLocation;
     window.open(url, "_blank");
   };
 
   const openWaze = () => {
-    const url = "https://waze.com/ul?ll=-2.4875,-44.2567&navigate=yes";
+    const url = event.linkWaze;
     window.open(url, "_blank");
   };
 
@@ -63,20 +65,21 @@ export default function Location() {
           <div className={styles.mapSection} data-aos="zoom-in">
             <div className={styles.imageGrid}>
               <div className={styles.mainImage}>
-                <img
-                  src={hotelImage}
+                {/* <img
+                  src={event.image}
                   alt="Hotel Legal - Fachada"
                   className={styles.hotelImage}
                   loading="lazy"
-                />
+                /> */}
+                {event.mapGoogle}
                 <div className={styles.imageBadge}>
                   <HiOutlineBuildingOffice />
-                  <span>Hotel Legal</span>
+                  <span>{event.location}</span>
                 </div>
               </div>
               <div className={styles.mapImage}>
                 <img
-                  src={mapImage}
+                  src={event.image}
                   alt="Mapa de localização"
                   className={styles.mapImg}
                   loading="lazy"
@@ -97,13 +100,7 @@ export default function Location() {
                 <HiOutlineMapPin className={styles.cardIcon} />
                 Endereço Completo
               </h3>
-              <p className={styles.address}>
-                Av. dos Holandeses, 123
-                <br />
-                Ponta d'Areia, São Luís - MA
-                <br />
-                CEP: 65075-480
-              </p>
+              <p className={styles.address}>{event.address}</p>
               <div className={styles.addressActions}>
                 <button
                   className={styles.copyButton}
@@ -132,14 +129,14 @@ export default function Location() {
                 <div className={styles.datetimeItem}>
                   <IoCalendarOutline className={styles.datetimeIcon} />
                   <div>
-                    <strong>13 e 14 de Junho</strong>
-                    <span>Sexta e Sábado</span>
+                    <strong>{event.date}</strong>
+                    <span>{event.daysWeek}</span>
                   </div>
                 </div>
                 <div className={styles.datetimeItem}>
                   <IoTimeOutline className={styles.datetimeIcon} />
                   <div>
-                    <strong>8h às 18h</strong>
+                    <strong>{event.time}</strong>
                     <span>Credenciamento a partir das 7h30</span>
                   </div>
                 </div>

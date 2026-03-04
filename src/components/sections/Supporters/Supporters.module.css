@@ -1,0 +1,103 @@
+.section {
+  padding: 60px 0;
+  background: #ffffff;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 40px;
+}
+
+/* Patrocinador */
+.patrocinador {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.tag {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #64748b;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.logoGrande {
+  max-width: 280px;
+  height: auto;
+  opacity: 0.9;
+  transition: opacity 0.2s;
+}
+
+.logoGrande:hover {
+  opacity: 1;
+}
+
+/* Row de duas colunas */
+.row {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+}
+
+.col {
+  flex: 1;
+  max-width: 300px;
+  text-align: center;
+}
+
+/* Logos pequenas lado a lado */
+.logosPequenas {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.logosPequenas img {
+  max-width: 120px;
+  height: auto;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.logosPequenas img:hover {
+  opacity: 1;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .section {
+    padding: 40px 0;
+  }
+
+  .title {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+  }
+
+  .row {
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+  }
+
+  .col {
+    width: 100%;
+  }
+
+  .logosPequenas {
+    flex-wrap: wrap;
+  }
+}
