@@ -13,7 +13,10 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 // Imagens
-import palestrante from "../../../assets/imgs/speakers/palestrante.jpeg";
+import logo from "../../../assets/imgs/logos/logo-movemente.png";
+
+import palestrante1 from "../../../assets/imgs/speakers/palestrante.jpeg";
+import kaduLins from "../../../assets/imgs/speakers/kadu-links.png";
 
 // React Icons para redes sociais
 import { FaLinkedinIn, FaTwitter, FaInstagram, FaGlobe } from "react-icons/fa";
@@ -41,7 +44,7 @@ const speakers: Speaker[] = [
     role: "Neuropediatra",
     company: "Hospital Infantil",
     bio: "Especialista em desenvolvimento infantil e autismo com 15 anos de experiência. Palestrante internacional e autora de livros sobre intervenção precoce.",
-    photo: palestrante,
+    photo: palestrante1,
     expertise: ["Neuropediatria", "Intervenção Precoce"],
     social: {
       linkedin: "https://linkedin.com",
@@ -52,74 +55,20 @@ const speakers: Speaker[] = [
   },
   {
     id: "2",
-    name: "Dr. Carlos Mendes",
-    role: "Psicólogo",
+    name: "Kadu Lins",
+    role: "Educador Físico",
     company: "Clínica ABA",
-    bio: "Especialista em Análise do Comportamento Aplicada (ABA) com foco em autismo. Coordenador de equipe multidisciplinar há 10 anos.",
-    photo: palestrante,
-    expertise: ["Psicologia", "ABA"],
+    bio: "Referência em atividade física como ferramenta de desenvolvimento psicossocial para pessoas neuroatípicas. Possui mais de 10 anos de atuação na área.",
+    photo: kaduLins,
+    expertise: ["Psicomotricidade ", "ABA"],
     social: {
-      linkedin: "https://linkedin.com",
-      twitter: "https://twitter.com",
-      instagram: "https://instagram.com",
-    },
-  },
-  {
-    id: "3",
-    name: "Maria Oliveira",
-    role: "Fonoaudióloga",
-    company: "Centro de Reabilitação",
-    bio: "Especialista em comunicação alternativa e augmentativa. Mestre em Linguagem e Desenvolvimento pela USP.",
-    photo: palestrante,
-    expertise: ["Fonoaudiologia", "Comunicação Alternativa"],
-    social: {
-      linkedin: "https://linkedin.com",
-      instagram: "https://instagram.com",
-      website: "https://example.com",
-    },
-  },
-  {
-    id: "4",
-    name: "Pedro Santos",
-    role: "Terapeuta Ocupacional",
-    company: "Instituto de Desenvolvimento",
-    bio: "Especialista em integração sensorial e atividades de vida diária para pessoas com TEA. Formação internacional em sensory integration.",
-    photo: palestrante,
-    expertise: ["Terapia Ocupacional", "Integração Sensorial"],
-    social: {
-      linkedin: "https://linkedin.com",
-      twitter: "https://twitter.com",
-    },
-  },
-  {
-    id: "5",
-    name: "Lucia Ferreira",
-    role: "Psicopedagoga",
-    company: "Escola Inclusiva",
-    bio: "Especialista em inclusão escolar e dificuldades de aprendizagem. Atua há 12 anos com mediação escolar para crianças com autismo.",
-    photo: palestrante,
-    expertise: ["Psicopedagogia", "Inclusão Escolar"],
-    social: {
-      linkedin: "https://linkedin.com",
-      instagram: "https://instagram.com",
-    },
-  },
-  {
-    id: "6",
-    name: "Roberto Alves",
-    role: "Advogado",
-    company: "Direitos da Pessoa com Deficiência",
-    bio: "Especialista em direitos das pessoas com autismo. Atua com ações judiciais para garantir acesso a tratamentos e educação inclusiva.",
-    photo: palestrante,
-    expertise: ["Direitos", "Legislação"],
-    social: {
-      linkedin: "https://linkedin.com",
-      website: "https://example.com",
+      website:
+        "https://kadulins.com.br/links/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGnF4sqHnSDG-grIvvyz7as6pTcKM8J-5cGzkmK1BAFNl59r_e-BHyZbiaZKGs_aem_AFg20jdydZRDqly__xKOrw",
+      // twitter: "https://twitter.com",
+      instagram: "https://www.instagram.com/kadu.lins/",
     },
   },
 ];
-
-const eventName = "Movimente";
 
 export default function Speakers() {
   const [swiperInstance, setSwiperInstance] = useState<any>(null);
@@ -210,9 +159,9 @@ export default function Speakers() {
                         className={styles.avatar}
                         loading="lazy"
                       />
-                      {eventName && (
+                      {/* {eventName && (
                         <span className={styles.eventBadge}>{eventName}</span>
-                      )}
+                      )} */}
                     </div>
 
                     {/* Social Links Overlay */}
@@ -254,6 +203,8 @@ export default function Speakers() {
                     </div>
                   </div>
                 </div>
+
+                <img src={logo} alt="logo" className={styles.logoBg} />
               </div>
             </SwiperSlide>
           ))}

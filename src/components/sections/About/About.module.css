@@ -255,3 +255,65 @@
     font-size: 1rem;
   }
 }
+
+/* ... (seu CSS existente) ... */
+
+/* Initial text */
+.initialText {
+  margin-bottom: 20px;
+}
+
+/* Full text */
+.fullText {
+  animation: fadeIn 0.5s ease;
+}
+
+/* Read more button */
+.readMoreButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  color: #3b82f6;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 8px 0;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+  border-bottom: 2px solid transparent;
+}
+
+.readMoreButton:hover {
+  color: #2563eb;
+  border-bottom-color: #3b82f6;
+}
+
+.arrow {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.readMoreButton:hover .arrow {
+  transform: translateY(2px);
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Ajuste para mobile */
+@media (max-width: 576px) {
+  .readMoreButton {
+    font-size: 0.95rem;
+  }
+}
