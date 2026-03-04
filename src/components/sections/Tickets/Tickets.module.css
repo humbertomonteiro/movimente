@@ -1,7 +1,7 @@
 .section {
   width: 100%;
   padding: 5rem 0;
-  background: var(--color-primary-transparent);
+  background: var(--bg-accent-transparent);
   position: relative;
   overflow: hidden;
 }
@@ -224,7 +224,7 @@
   background: linear-gradient(
     to bottom,
     var(--color-primary),
-    var(--color-accent)
+    var(--color-tertiary)
   );
   top: -10%;
   left: -10%;
@@ -237,7 +237,7 @@
   background: linear-gradient(
     240deg,
     var(--color-primary),
-    var(--color-accent)
+    var(--color-secondary)
   );
   bottom: 20%;
   right: -20%;
@@ -250,7 +250,7 @@
   background: linear-gradient(
     120deg,
     var(--color-primary),
-    var(--color-accent)
+    var(--color-tertiary-light)
   );
   top: 60%;
   left: 0%;

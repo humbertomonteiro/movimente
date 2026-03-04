@@ -13,8 +13,7 @@ export default function Hero() {
       <div className={styles.container}>
         <div className={styles.content}>
           <div className={styles.logo} data-aos="zoom-in">
-            {/* <img loading="lazy" src={logoMobile} alt="Logo Conect Autismo" /> */}
-            <img className={styles.logoImg} src={logo} alt="Logo" />
+            <img className={styles.logoImg} src={logo} alt="Logo Movemente" />
           </div>
           <div className={styles.text} data-aos="zoom-in" data-aos-delay="300">
             <p className={styles.subtitle}>
