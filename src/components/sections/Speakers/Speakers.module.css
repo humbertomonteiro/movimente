@@ -35,6 +35,8 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
+  position: relative;
+  z-index: 2;
 }
 
 /* Header */
@@ -48,10 +50,6 @@
   font-weight: 700;
   margin-bottom: 16px;
   color: var(--color-text-white);
-  /* background: linear-gradient(135deg, #1e293b 0%, #334155 100%); */
-  /* -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text; */
 }
 
 @media (max-width: 768px) {
@@ -68,24 +66,46 @@
   line-height: 1.6;
 }
 
-/* Grid */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  margin-bottom: 50px;
+/* Navigation Buttons */
+.navigationButtons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-bottom: 30px;
 }
 
-@media (max-width: 992px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
+@media (max-width: 768px) {
+  .navigationButtons {
+    justify-content: center;
   }
 }
 
-@media (max-width: 576px) {
-  .grid {
-    grid-template-columns: 1fr;
-  }
+.navButton {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.navButton:hover {
+  background: white;
+  color: var(--color-primary);
+  transform: scale(1.1);
+  border-color: white;
+}
+
+/* Swiper */
+.swiper {
+  padding: 10px 0 40px 0;
 }
 
 /* Card */
@@ -191,17 +211,13 @@
   color: #475569;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: all 0.2s ease;
+  font-size: 1rem;
 }
 
 .socialLink:hover {
   background: #6366f1;
   color: white;
   transform: scale(1.1);
-}
-
-.socialIcon {
-  width: 18px;
-  height: 18px;
 }
 
 /* Content */
@@ -269,11 +285,34 @@
   transform: translateY(-2px);
 }
 
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 30px;
+}
+
+.bullet {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.bulletActive {
+  width: 30px;
+  background: white;
+  border-radius: 10px;
+}
+
 /* CTA Container */
 .ctaContainer {
   text-align: center;
-  margin: 0 auto;
-  margin-top: 20px;
+  margin: 50px auto 0;
   width: 450px;
   max-width: 100%;
 }
@@ -319,5 +358,9 @@
   .avatar {
     width: 100px;
     height: 100px;
+  }
+
+  .navigationButtons {
+    margin-bottom: 20px;
   }
 }
