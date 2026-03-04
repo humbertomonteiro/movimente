@@ -188,7 +188,7 @@
     width: 100%;
     height: 100%;
     background:
-      linear-gradient(to bottom, #00000009, #371149c7, var(--color-accent)),
+      linear-gradient(to bottom, #00000009, #12001ad5, var(--color-accent)),
       url("../../../assets/imgs/bgs/bg-mobile.png");
     background-size: cover;
     background-position: bottom;
@@ -210,7 +210,7 @@
   }
 
   .logoImg {
-    width: 180px;
+    width: 220px;
   }
 
   /* .highlight {
