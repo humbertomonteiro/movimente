@@ -1,7 +1,7 @@
 .section {
   width: 100%;
   padding: 5rem 0;
-  background: var(--color-primary);
+  background: var(--color-primary-transparent);
   position: relative;
   overflow: hidden;
 }

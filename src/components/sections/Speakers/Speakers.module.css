@@ -1,6 +1,6 @@
 .section {
   padding: 80px 0;
-  background: var(--color-primary);
+  background: var(--color-primary-transparent);
   overflow: hidden;
   position: relative;
 }
@@ -171,7 +171,7 @@
   position: absolute;
   top: 0;
   right: 0;
-  background: var(--color-accent-light);
+  background: var(--bg-gradient-tertiary);
   color: white;
   font-size: 0.75rem;
   font-weight: 600;

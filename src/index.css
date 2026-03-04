@@ -7,6 +7,7 @@
 
 :root {
   --color-primary: #000c99;
+  --color-primary-transparent: #000d99d2;
   --color-secondary: #0583f2;
   --color-tertiary: #f2055c;
   --color-accent: #81008f;
@@ -59,6 +60,7 @@
     var(--color-primary-light),
     var(--color-accent-light)
   );
+  --bg-gradient-tertiary: linear-gradient(135deg, #3b82f6, #8b5cf6);
 }
 
 [data-aos] {

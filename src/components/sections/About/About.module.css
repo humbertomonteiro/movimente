@@ -92,8 +92,8 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(59, 130, 246, 0.1);
-  color: #3b82f6;
+  background: var(--bg-gradient-tertiary);
+  color: var(--color-text-white);
   padding: 8px 16px;
   border-radius: 40px;
   font-size: 0.9rem;
@@ -182,7 +182,8 @@
 .featureIconWrapper {
   width: 48px;
   height: 48px;
-  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  background: var(--bg-gradient-tertiary);
+  color: var(--color-text-white);
   border-radius: 16px;
   display: flex;
   align-items: center;

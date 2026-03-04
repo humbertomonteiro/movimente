@@ -8,6 +8,7 @@ import {
 import { HiOutlineBuildingOffice, HiOutlineMapPin } from "react-icons/hi2";
 
 import { FaRegCopy } from "react-icons/fa";
+import GridOverlay from "../../shared/GridOverlay";
 
 // import hotelImage from "../../../assets/imgs/location/hotel-legal.jpg";
 // import mapImage from "../../../assets/imgs/location/map.jpg";
@@ -147,6 +148,7 @@ export default function Location() {
           </div>
         </div>
       </div>
+      <GridOverlay />
     </section>
   );
 }
