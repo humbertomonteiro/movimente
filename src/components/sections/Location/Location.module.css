@@ -1,0 +1,529 @@
+.section {
+  position: relative;
+  padding: 80px 0;
+  background: var(--color-primary);
+  overflow: hidden;
+}
+
+.shapeMap {
+  position: absolute;
+  top: -100px;
+  right: -50px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(
+    circle,
+    rgba(59, 130, 246, 0.05) 0%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.shapePin {
+  position: absolute;
+  bottom: -100px;
+  left: -50px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(
+    circle,
+    rgba(236, 72, 153, 0.05) 0%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg-gradient-primary);
+  color: white;
+  padding: 8px 20px;
+  border-radius: 40px;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.badgeIcon {
+  font-size: 1.2rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-text-white);
+  margin-bottom: 16px;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+}
+
+.titleHighlight {
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6, #ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: var(--color-text-white-2);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Content Grid */
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+@media (max-width: 992px) {
+  .content {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Map Section */
+.mapSection {
+  position: relative;
+}
+
+.imageGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.mainImage {
+  position: relative;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.2);
+}
+
+.hotelImage {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.mainImage:hover .hotelImage {
+  transform: scale(1.05);
+}
+
+.imageBadge {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(5px);
+  padding: 10px 20px;
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  color: #1e293b;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.imageBadge svg {
+  color: #3b82f6;
+  font-size: 1.2rem;
+}
+
+.mapImage {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  height: 150px;
+}
+
+.mapImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mapButton {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #1e293b;
+  cursor: pointer;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.mapButton:hover {
+  background: #3b82f6;
+  color: white;
+  transform: scale(1.05);
+}
+
+/* Info Section */
+.infoSection {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+  border: 1px solid #f1f5f9;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.15);
+  border-color: #3b82f6;
+}
+
+.cardTitle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #f1f5f9;
+}
+
+.cardIcon {
+  color: #3b82f6;
+  font-size: 1.4rem;
+}
+
+.address {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #475569;
+  margin-bottom: 16px;
+}
+
+.addressActions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.copyButton {
+  background: none;
+  border: 1px solid #e2e8f0;
+  padding: 8px 16px;
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #475569;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.copyButton:hover {
+  background: #f1f5f9;
+  border-color: #3b82f6;
+  color: #3b82f6;
+}
+
+.mapLinks {
+  display: flex;
+  gap: 8px;
+}
+
+.mapLink {
+  background: none;
+  border: none;
+  color: #3b82f6;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.mapLink:hover {
+  background: #eff6ff;
+  text-decoration: underline;
+}
+
+/* Datetime */
+.datetimeGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.datetimeItem {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 8px 0;
+}
+
+.datetimeIcon {
+  font-size: 1.5rem;
+  color: #3b82f6;
+  background: #eff6ff;
+  padding: 10px;
+  border-radius: 12px;
+}
+
+.datetimeItem div {
+  display: flex;
+  flex-direction: column;
+}
+
+.datetimeItem strong {
+  font-size: 1rem;
+  color: #1e293b;
+}
+
+.datetimeItem span {
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+/* Transport */
+.transportGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.transportItem {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 8px 0;
+}
+
+.transportIcon {
+  font-size: 1.3rem;
+  color: #8b5cf6;
+  background: #f5f3ff;
+  padding: 10px;
+  border-radius: 12px;
+}
+
+.transportItem div {
+  display: flex;
+  flex-direction: column;
+}
+
+.transportItem strong {
+  font-size: 1rem;
+  color: #1e293b;
+  margin-bottom: 2px;
+}
+
+.transportItem span {
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+/* Amenities */
+.amenitiesGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.amenity {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #f8fafc;
+  padding: 10px;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  color: #475569;
+}
+
+.amenity svg {
+  color: #3b82f6;
+  font-size: 1.1rem;
+}
+
+/* Contact Card */
+.contactCard {
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  border-radius: 24px;
+  padding: 24px;
+  color: white;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.contactCard h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.contactCard p {
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+  opacity: 0.9;
+}
+
+.whatsappButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: white;
+  color: #3b82f6;
+  padding: 12px 30px;
+  border-radius: 40px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.2);
+}
+
+.whatsappButton:hover {
+  transform: scale(1.05);
+  background: #f8fafc;
+  box-shadow: 0 15px 25px -8px rgba(0, 0, 0, 0.3);
+}
+
+.whatsappButton svg {
+  font-size: 1.2rem;
+}
+
+/* Nearby Hotels */
+.nearbyHotels {
+  margin-top: 40px;
+  padding-top: 40px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.nearbyTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1e293b;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.hotelsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .hotelsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .hotelsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.hotelItem {
+  background: white;
+  padding: 20px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 1px solid #f1f5f9;
+}
+
+.hotelItem:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  border-color: #3b82f6;
+}
+
+.hotelItem h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 8px;
+}
+
+.hotelItem p {
+  font-size: 0.9rem;
+  color: #64748b;
+  margin-bottom: 6px;
+}
+
+.hotelItem small {
+  font-size: 0.8rem;
+  color: #3b82f6;
+  font-weight: 500;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .section {
+    padding: 60px 0;
+  }
+
+  .addressActions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .mapLinks {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .amenitiesGrid {
+    grid-template-columns: 1fr;
+  }
+}

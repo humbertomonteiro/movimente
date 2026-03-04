@@ -1,6 +1,7 @@
 import styles from "./Speakers.module.css";
 import ButtonCTA from "../../shared/ButtonCTA";
 import palestrante from "../../../assets/imgs/speakers/palestrante.jpeg";
+import GridOverlay from "../../shared/GridOverlay";
 
 interface Speaker {
   id: string;
@@ -116,13 +117,14 @@ const eventName = "Movimente";
 export default function Speakers({}) {
   return (
     <section className={styles.section} id="speakers">
+      <GridOverlay />
       <div className={styles.backgroundOverlay}></div>
       <div className={styles.sphereTopLeft}></div>
       <div className={styles.sphereBottomRight}></div>
 
       <div className={styles.container}>
         {/* Header */}
-        <div className={styles.header} data-aos="fade-up">
+        <div className={styles.header} data-aos="zoom-in">
           <h2 className={styles.title}>Palestrantes confirmados</h2>
           <p className={styles.subtitle}>Conheça nosso time de Palestrantes</p>
         </div>

@@ -145,9 +145,9 @@ export default function CommonQuestions() {
       <h2 className={styles.title}>Perguntas Frequentes</h2>
       <div className={styles.backgroundOverlay}></div>
 
-      <div className={styles.container}>
+      <div className={styles.container} data-aos="zoom-in">
         {/* Card do WhatsApp */}
-        <div className={styles.ballonWhatsapp} data-aos="zoom-in">
+        <div className={styles.ballonWhatsapp} >
           <FaWhatsapp />
           <h3>Prefere falar conosco?</h3>
           <p>Fale com nosso time de suporte pelo WhatsApp</p>
@@ -159,7 +159,7 @@ export default function CommonQuestions() {
         </div>
 
         {/* Lista de Perguntas */}
-        <ul className={styles.questions} data-aos="zoom-in">
+        <ul className={styles.questions} >
           {questions.map((item) => (
             <li key={item.id} className={styles.question}>
               <button

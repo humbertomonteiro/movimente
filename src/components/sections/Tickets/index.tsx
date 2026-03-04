@@ -1,8 +1,8 @@
 import styles from "./Tickets.module.css";
 import { FaCheck, FaUsers, FaTicketAlt } from "react-icons/fa";
 import { GiBrain } from "react-icons/gi";
-import AnimationCirclesBg from "../../shared/AnimationCirclesBg";
 import ButtonCTA from "../../shared/ButtonCTA";
+import GridOverlay from "../../shared/GridOverlay";
 
 export default function Tickets() {
   const tickets = [
@@ -60,19 +60,12 @@ export default function Tickets() {
     });
   };
 
-  // const calculateInstallment = (price: number) => {
-  //   return (price / 12).toLocaleString("pt-BR", {
-  //     minimumFractionDigits: 2,
-  //     maximumFractionDigits: 2,
-  //   });
-  // };
-
   return (
     <section className={styles.section} id="tickets">
-      <AnimationCirclesBg />
+      <GridOverlay />
       <div className={styles.container}>
         {/* Header */}
-        <div className={styles.header} data-aos="fade-up">
+        <div className={styles.header} data-aos="zoom-in">
           <span className={styles.tag}>INGRESSOS</span>
           <h2 className={styles.title}>Escolha sua melhor opção</h2>
           <p className={styles.subtitle}>
@@ -90,8 +83,8 @@ export default function Tickets() {
               <div
                 key={ticket.id}
                 className={styles.card}
-                data-aos="fade-up"
-                data-aos-delay={`${index * 200}`}
+                data-aos="zoom-in"
+                data-aos-delay={index * 100}
               >
                 {/* Header */}
                 <div className={styles.cardHeader}>
@@ -115,11 +108,6 @@ export default function Tickets() {
                   <span className={styles.totalPrice}>
                     ou R$ {formatPrice(ticket.installmentPrice)} à vista
                   </span>
-                  {/* 
-                  <span className={styles.installmentNote}>
-                    <FaCreditCard className={styles.creditIcon} /> sem juros no
-                    cartão
-                  </span> */}
                 </div>
 
                 {/* Features */}
@@ -146,7 +134,7 @@ export default function Tickets() {
         </div>
 
         {/* Footer */}
-        <div className={styles.footer} data-aos="fade-up">
+        <div className={styles.footer}>
           <p className={styles.footerNote}>
             *Meia-entrada válida para estudantes, professores e profissionais da
             rede pública.
@@ -162,7 +150,7 @@ export default function Tickets() {
       <div className={`${styles.gradientSphere} ${styles.sphere2}`}></div>
       <div className={`${styles.gradientSphere} ${styles.sphere3}`}></div>
 
-      <div className={styles.gridOverlay}></div>
+      {/* <div className={styles.gridOverlay}></div> */}
     </section>
   );
 }

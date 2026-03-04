@@ -83,34 +83,26 @@ export default function About() {
         </div>
 
         {/* Conteúdo */}
-        <div
-          className={styles.contentColumn}
-          data-aos="zoom-in"
-          data-aos-delay="200"
-        >
-          {/* Badge de localização */}
-          <span className={styles.locationBadge}>
-            <svg
-              className={styles.locationIcon}
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path
-                fillRule="evenodd"
-                d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
-                clipRule="evenodd"
-              />
-            </svg>
-            São Luís - Maranhão
-          </span>
-
-          {/* Título */}
-          <h2 className={styles.title}>
-            Sobre o <span className={styles.titleHighlight}>Movimente</span>
-          </h2>
-
+        <div className={styles.contentColumn}>
           {/* Descrição */}
-          <div className={styles.description}>
+          <div className={styles.description} data-aos="zoom-in">
+            <span className={styles.locationBadge}>
+              <svg
+                className={styles.locationIcon}
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                  clipRule="evenodd"
+                />
+              </svg>
+              São Luís - Maranhão
+            </span>
+            <h2 className={styles.title}>
+              Sobre o <span className={styles.titleHighlight}>Movimente</span>
+            </h2>
             <p className={styles.paragraph}>
               O <strong>Movimente</strong> nasceu da necessidade de criar um
               espaço de acolhimento, aprendizado e troca de experiências sobre o

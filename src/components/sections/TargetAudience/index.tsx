@@ -12,7 +12,6 @@ import {
   FaBrain,
   FaHandsHelping,
 } from "react-icons/fa";
-import AnimationCirclesBg from "../../shared/AnimationCirclesBg";
 
 const benefits = [
   {
@@ -113,7 +112,6 @@ export default function oportunidades() {
           ))}
         </Swiper>
       </div>
-      <AnimationCirclesBg />
     </div>
   );
 }

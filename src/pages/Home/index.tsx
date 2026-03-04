@@ -7,6 +7,8 @@ import CommonQuestions from "../../components/sections/CommonQuestions";
 import Footer from "../../components/tamplats/Footer";
 import Speakers from "../../components/sections/Speakers";
 import About from "../../components/sections/About";
+import Location from "../../components/sections/Location";
+import Testimonials from "../../components/sections/Testimonials";
 
 export default function Home() {
   return (
@@ -17,6 +19,8 @@ export default function Home() {
       <Speakers />
       <About />
       <Tickets />
+      <Testimonials />
+      <Location />
       <CommonQuestions />
       <Footer />
     </div>

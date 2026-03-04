@@ -2,10 +2,12 @@ import styles from "./Hero.module.css";
 import ButtonCTA from "../../shared/ButtonCTA";
 import bg from "../../../assets/imgs/bgs/bg.png";
 import logo from "../../../assets/imgs/logos/logo-movemente.png";
+import GridOverlay from "../../shared/GridOverlay";
 
 export default function Hero() {
   return (
     <section className={styles.section}>
+      <GridOverlay />
       <div className={styles.sphereTopLeft}></div>
       <div className={styles.backgroundOverlay}></div>
       <div className={styles.container}>
@@ -31,7 +33,6 @@ export default function Hero() {
         <div className={styles.image}>
           <img src={bg} alt="Imagem de pessoas felizes no conect autismo" />
         </div>
-        <div className={styles.gridOverlay}></div>
       </div>
     </section>
   );
