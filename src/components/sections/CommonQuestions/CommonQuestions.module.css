@@ -55,7 +55,7 @@
 .ballonWhatsapp > svg {
   font-size: 3.5rem;
   margin-bottom: 1rem;
-  color: var(--color-primary);
+  color: var(--color-accent);
   position: relative;
   z-index: 1;
 }
@@ -63,7 +63,7 @@
 .ballonWhatsapp h3 {
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
-  color: var(--color-primary);
+  color: var(--color-accent);
   position: relative;
   z-index: 1;
 }
@@ -100,7 +100,7 @@
 
 .question button {
   background-color: transparent;
-  color: var(--color-primary);
+  color: var(--color-accent);
   border: 0;
   font-weight: 600;
   font-size: 1rem;
@@ -116,7 +116,7 @@
 
 .question button:hover {
   background-color: #f0f4ff;
-  color: var(--color-accent);
+  color: var(--color-primary);
 }
 
 .question button svg {

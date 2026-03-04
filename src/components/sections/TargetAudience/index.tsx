@@ -60,7 +60,7 @@ const benefits = [
 
 export default function oportunidades() {
   return (
-    <div className={styles.container} id="about">
+    <div className={styles.container}>
       <div className={styles.backgroundOverlay}></div>
       <h2 className={styles.title} data-aos="zoom-in">
         Oportunidades

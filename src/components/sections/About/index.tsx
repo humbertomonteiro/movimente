@@ -19,7 +19,7 @@ export default function About() {
   };
 
   return (
-    <section className={styles.section}>
+    <section className={styles.section} id="about">
       {/* Elementos decorativos de fundo */}
       <div className={styles.shapeBlue} data-aos="fade-right"></div>
       <div className={styles.shapePurple} data-aos="fade-left"></div>
