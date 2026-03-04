@@ -124,7 +124,7 @@ const eventName = "Movimente";
 export default function Speakers() {
   const [swiperInstance, setSwiperInstance] = useState<any>(null);
 
-  const getSocialIcon = (platform: string, url: string) => {
+  const getSocialIcon = (platform: string) => {
     switch (platform) {
       case "linkedin":
         return <FaLinkedinIn />;
@@ -228,7 +228,7 @@ export default function Speakers() {
                               className={styles.socialLink}
                               aria-label={`${platform} de ${speaker.name}`}
                             >
-                              {getSocialIcon(platform, url)}
+                              {getSocialIcon(platform)}
                             </a>
                           ),
                         )}
