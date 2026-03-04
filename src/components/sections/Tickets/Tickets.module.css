@@ -224,10 +224,10 @@
   background: linear-gradient(
     to bottom,
     var(--color-primary),
-    var(--color-tertiary)
+    var(--color-secondary-light)
   );
   top: -10%;
-  left: -10%;
+  left: -30%;
   animation: float-1 15s ease-in-out infinite alternate;
 }
 
@@ -237,10 +237,10 @@
   background: linear-gradient(
     240deg,
     var(--color-primary),
-    var(--color-secondary)
+    var(--color-primary-light)
   );
   bottom: 20%;
-  right: -20%;
+  right: -40%;
   animation: float-2 18s ease-in-out infinite alternate;
 }
 
@@ -252,7 +252,7 @@
     var(--color-primary),
     var(--color-tertiary-light)
   );
-  top: 60%;
+  bottom: -30%;
   left: 0%;
   animation: float-3 20s ease-in-out infinite alternate;
 }

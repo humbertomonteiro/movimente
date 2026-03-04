@@ -28,7 +28,7 @@
 /* Variante Primary (laranja) - igual ao seu padrão */
 .button[data-color="primary"] {
   background-image: var(--bg-gradient-primary);
-  box-shadow: 0 4px 15px 0 rgba(252, 104, 109, 0.336);
+  box-shadow: 0 4px 15px 0 rgba(179, 121, 197, 0.336);
 }
 
 /* Variante Blue - igual ao seu [data-color="blue"] */
@@ -41,7 +41,7 @@
     #667db6,
     #0082c8
   ); */
-  box-shadow: 0 4px 15px 0 rgba(116, 79, 168, 0.11);
+  box-shadow: 0 4px 15px 0 rgba(174, 137, 226, 0.11);
 }
 
 /* Variante Line - igual ao seu [data-color="line"] */
