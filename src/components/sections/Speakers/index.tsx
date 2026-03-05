@@ -8,8 +8,12 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, A11y } from "swiper/modules";
 
 import palestrante1 from "../../../assets/imgs/speakers/palestrante.jpeg";
+
 import kaduLins from "../../../assets/imgs/speakers/kadu-links.png";
 import kaduLinsVideo from "../../../assets/videos/kadu-lins.mp4";
+
+import carolineBitar from "../../../assets/imgs/speakers/caroline-bitar.jpeg";
+import carolineBitarVideo from "../../../assets/videos/caroline-bitar.mp4";
 
 // React Icons para redes sociais
 import { FaLinkedinIn, FaTwitter, FaInstagram, FaGlobe } from "react-icons/fa";
@@ -61,6 +65,20 @@ const speakers: Speaker[] = [
       website:
         "https://kadulins.com.br/links/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGnF4sqHnSDG-grIvvyz7as6pTcKM8J-5cGzkmK1BAFNl59r_e-BHyZbiaZKGs_aem_AFg20jdydZRDqly__xKOrw",
       instagram: "https://www.instagram.com/kadu.lins/",
+    },
+  },
+  {
+    id: "3",
+    name: "Caroline Bitar da Cunha Olegário ",
+    role: "psicóloga",
+    company: "BITAR ATIVIDADES DE APOIO A EDUCACAO LTDA",
+    bio: "Carol Bitar é psicóloga (CRP 03/14361), especialista em Neurociência e Comportamento, autora do livro “Socorro, tenho filhos” e mãe. Mais de 10 anos de experiência em atendimentos clínicos na abordagem da Terapia Cognitivo-comportamental e com prática baseada em evidência. Além disso, ministra seus cursos com foco no TDAH na redução de sintomas e prejuízos do transtorno. ",
+    photo: carolineBitar,
+    expertise: ["especialista em comportamento"],
+    videoUrl: carolineBitarVideo,
+    social: {
+      website: "https://carolbitar.com.br",
+      instagram: "https://www.instagram.com/carolbitar_/",
     },
   },
 ];
