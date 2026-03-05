@@ -71,8 +71,8 @@ export const EventProvider = ({ children }: EventProviderProps) => {
         ></iframe>
       ),
       contacts: {
-        phone: "",
-        email: "",
+        phone: "98985307788",
+        email: "vivaaprenderma@gmail.com",
         whatsapp: "",
       },
       socials: {

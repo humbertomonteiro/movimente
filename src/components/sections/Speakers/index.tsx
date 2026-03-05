@@ -7,6 +7,9 @@ import GridOverlay from "../../shared/GridOverlay";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { A11y } from "swiper/modules";
 
+import pauloLiberalesso from "../../../assets/imgs/speakers/paulo-liberalesso.png";
+import pauloLiberalessoVideo from "../../../assets/videos/paulo-liberalesso.mp4";
+
 import palestrante1 from "../../../assets/imgs/speakers/palestrante.jpeg";
 
 import kaduLins from "../../../assets/imgs/speakers/kadu-links.png";
@@ -14,6 +17,9 @@ import kaduLinsVideo from "../../../assets/videos/kadu-lins.mp4";
 
 import carolineBitar from "../../../assets/imgs/speakers/caroline-bitar.jpeg";
 import carolineBitarVideo from "../../../assets/videos/caroline-bitar.mp4";
+
+import jvDePaiva from "../../../assets/imgs/speakers/jv-paiva.png";
+import jvDePaivaVideo from "../../../assets/videos/jv-paiva.mp4";
 
 // React Icons para redes sociais
 import {
@@ -45,10 +51,21 @@ interface Speaker {
 
 const speakers: Speaker[] = [
   {
+    id: "0",
+    name: "Dr. Paulo Liberalesso",
+    role: "Médico Neuropediatra",
+    company: "Médico",
+    bio: " e Médico Neuropediatra, possui mestrado em Neurociências, doutorado em Distúrbios da Comunicação Humana, pós-graduado em Neurofisiologia, pós-graduado em Análise do Comportamento, e é diretor científico do Grupo IEPSIS.",
+    photo: pauloLiberalesso,
+    expertise: ["Neurocientista", "Intervenção Precoce"],
+    videoUrl: pauloLiberalessoVideo,
+    social: {},
+  },
+  {
     id: "1",
     name: "Dra. Ana Silva",
     role: "Neuropediatra",
-    company: "Hospital Infantil",
+    company: "Médica",
     bio: "Especialista em desenvolvimento infantil e autismo com 15 anos de experiência. Palestrante internacional e autora de livros sobre intervenção precoce.",
     photo: palestrante1,
     expertise: ["Neuropediatria", "Intervenção Precoce"],
@@ -82,6 +99,20 @@ const speakers: Speaker[] = [
     social: {
       website: "https://carolbitar.com.br",
       instagram: "https://www.instagram.com/carolbitar_/",
+    },
+  },
+  {
+    id: "4",
+    name: "João Vitor de Paiva Bittencourt",
+    role: "Educador Físico",
+    company: "João Vitor de Paiva Bittencourt Ltda",
+    bio: `Ele é influenciador digital (@jvdepaiva), com mais de 1 milhão de seguidores no Instagram e tik tok, Jovem Ativista do Unicef (um dos cinco no País a integrar o grupo de 100 lideranças jovens globais do Fundo no planeta), ator (protagonista no filme Colegas e o herdeiro e atuou na minissérie E, agora, quem fica com a mamãe?, no SBT) , modelo, primeiro aluno com T21 a se formar no curso de Educação Física da PUC-Goiás, eleito o Melhor Influenciador brasileiro na categoria Diversidade e Inclusão 2024 no prêmio ibest (considerado o Oscar da internet brasileira) e faz um trabalho bacana pelos direitos das pessoas com deficiência no Brasil
+Expertise: ações para inclusão, palestrante`,
+    photo: jvDePaiva,
+    expertise: ["Palestrante"],
+    videoUrl: jvDePaivaVideo,
+    social: {
+      instagram: "https://www.instagram.com/jvdepaiva/",
     },
   },
 ];
