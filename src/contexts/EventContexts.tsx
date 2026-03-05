@@ -1,9 +1,5 @@
 import { createContext, useContext, useState, type ReactNode } from "react";
 
-/* =========================
-     Tipagens
-  ========================= */
-
 export interface EventData {
   id: string;
   title: string;
@@ -17,6 +13,26 @@ export interface EventData {
   linkLocation: string;
   image: string;
   mapGoogle: React.ReactNode;
+  contacts: {
+    phone: string;
+    email: string;
+    whatsapp: string;
+  };
+  socials: {
+    instagram?: string;
+    facebook?: string;
+    linkedin?: string;
+    youtube?: string;
+  };
+  tickets: {
+    valueDefault: number;
+    valueAll: number;
+    valueHalf: number;
+    group: number;
+    linkTicketAll: string;
+    linkTicketHalf: string;
+    linkTicketGroup: string;
+  };
 }
 
 interface EventContextType {
@@ -25,15 +41,7 @@ interface EventContextType {
   removeEvent: (id: string) => void;
 }
 
-/* =========================
-     Criação do Context
-  ========================= */
-
 const EventContext = createContext<EventContextType | undefined>(undefined);
-
-/* =========================
-     Provider
-  ========================= */
 
 interface EventProviderProps {
   children: ReactNode;
@@ -62,6 +70,26 @@ export const EventProvider = ({ children }: EventProviderProps) => {
           loading="lazy"
         ></iframe>
       ),
+      contacts: {
+        phone: "",
+        email: "",
+        whatsapp: "",
+      },
+      socials: {
+        instagram: "",
+        facebook: "",
+        linkedin: "",
+        youtube: "",
+      },
+      tickets: {
+        valueDefault: 899.9,
+        valueAll: 799.98,
+        valueHalf: 399.99,
+        group: 349.99,
+        linkTicketAll: "",
+        linkTicketHalf: "",
+        linkTicketGroup: "",
+      },
     },
   ]);
 
@@ -84,10 +112,6 @@ export const EventProvider = ({ children }: EventProviderProps) => {
     </EventContext.Provider>
   );
 };
-
-/* =========================
-     Hook Customizado
-  ========================= */
 
 export const useEvent = (): EventContextType => {
   const context = useContext(EventContext);

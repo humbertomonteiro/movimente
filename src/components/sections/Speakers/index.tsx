@@ -7,19 +7,16 @@ import GridOverlay from "../../shared/GridOverlay";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, A11y } from "swiper/modules";
 
-// Swiper CSS
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-
 // Imagens
 import logo from "../../../assets/imgs/logos/logo-movemente.png";
 
 import palestrante1 from "../../../assets/imgs/speakers/palestrante.jpeg";
 import kaduLins from "../../../assets/imgs/speakers/kadu-links.png";
+import kaduLinsVideo from "../../../assets/videos/Kaku-lins.mp4";
 
 // React Icons para redes sociais
 import { FaLinkedinIn, FaTwitter, FaInstagram, FaGlobe } from "react-icons/fa";
+import { IoClose, IoPlay } from "react-icons/io5";
 
 interface Speaker {
   id: string;
@@ -29,6 +26,7 @@ interface Speaker {
   bio: string;
   photo: string;
   expertise: string[];
+  videoUrl?: string; // URL do vídeo (YouTube embed, Vimeo, etc.)
   social?: {
     linkedin?: string;
     twitter?: string;
@@ -61,10 +59,10 @@ const speakers: Speaker[] = [
     bio: "Referência em atividade física como ferramenta de desenvolvimento psicossocial para pessoas neuroatípicas. Possui mais de 10 anos de atuação na área.",
     photo: kaduLins,
     expertise: ["Psicomotricidade ", "ABA"],
+    videoUrl: kaduLinsVideo,
     social: {
       website:
         "https://kadulins.com.br/links/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGnF4sqHnSDG-grIvvyz7as6pTcKM8J-5cGzkmK1BAFNl59r_e-BHyZbiaZKGs_aem_AFg20jdydZRDqly__xKOrw",
-      // twitter: "https://twitter.com",
       instagram: "https://www.instagram.com/kadu.lins/",
     },
   },
@@ -72,6 +70,7 @@ const speakers: Speaker[] = [
 
 export default function Speakers() {
   const [swiperInstance, setSwiperInstance] = useState<any>(null);
+  const [activeVideo, setActiveVideo] = useState<Speaker | null>(null);
 
   const getSocialIcon = (platform: string) => {
     switch (platform) {
@@ -86,6 +85,18 @@ export default function Speakers() {
       default:
         return null;
     }
+  };
+
+  const openVideoModal = (speaker: Speaker) => {
+    if (speaker.videoUrl) {
+      setActiveVideo(speaker);
+      document.body.style.overflow = "hidden";
+    }
+  };
+
+  const closeVideoModal = () => {
+    setActiveVideo(null);
+    document.body.style.overflow = "";
   };
 
   return (
@@ -153,36 +164,33 @@ export default function Speakers() {
                   {/* Avatar Section */}
                   <div className={styles.avatarSection}>
                     <div className={styles.avatarContainer}>
-                      <img
-                        src={speaker.photo}
-                        alt={speaker.name}
-                        className={styles.avatar}
-                        loading="lazy"
-                      />
-                      {/* {eventName && (
-                        <span className={styles.eventBadge}>{eventName}</span>
-                      )} */}
-                    </div>
-
-                    {/* Social Links Overlay */}
-                    {speaker.social && (
-                      <div className={styles.socialOverlay}>
-                        {Object.entries(speaker.social).map(
-                          ([platform, url]) => (
-                            <a
-                              key={platform}
-                              href={url}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className={styles.socialLink}
-                              aria-label={`${platform} de ${speaker.name}`}
-                            >
-                              {getSocialIcon(platform)}
-                            </a>
-                          ),
+                      {/* Avatar clicável para abrir vídeo */}
+                      <button
+                        className={`${styles.avatarButton} ${speaker.videoUrl ? styles.hasVideo : ""}`}
+                        onClick={() => openVideoModal(speaker)}
+                        aria-label={`Ver vídeo de ${speaker.name}`}
+                        disabled={!speaker.videoUrl}
+                      >
+                        {/* Anel de gradiente estilo Instagram */}
+                        {speaker.videoUrl && (
+                          <span
+                            className={styles.storyRing}
+                            aria-hidden="true"
+                          />
                         )}
-                      </div>
-                    )}
+                        <img
+                          src={speaker.photo}
+                          alt={speaker.name}
+                          className={styles.avatar}
+                          loading="lazy"
+                        />
+                        {speaker.videoUrl && (
+                          <span className={styles.playHint} aria-hidden="true">
+                            <IoPlay />
+                          </span>
+                        )}
+                      </button>
+                    </div>
                   </div>
 
                   {/* Content */}
@@ -202,6 +210,24 @@ export default function Speakers() {
                       ))}
                     </div>
                   </div>
+
+                  {/* Social Links — fixos no rodapé do card */}
+                  {speaker.social && (
+                    <div className={styles.socialFooter}>
+                      {Object.entries(speaker.social).map(([platform, url]) => (
+                        <a
+                          key={platform}
+                          href={url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={styles.socialLink}
+                          aria-label={`${platform} de ${speaker.name}`}
+                        >
+                          {getSocialIcon(platform)}
+                        </a>
+                      ))}
+                    </div>
+                  )}
                 </div>
 
                 <img src={logo} alt="logo" className={styles.logoBg} />
@@ -210,14 +236,61 @@ export default function Speakers() {
           ))}
         </Swiper>
 
-        {/* Pagination container */}
-        {/* <div className={styles.pagination}></div> */}
-
         {/* CTA Button */}
         <div className={styles.ctaContainer} data-aos="fade-up">
           <ButtonCTA link="#tickets" text="Garantir Vaga" />
         </div>
       </div>
+
+      {/* Modal de Vídeo — estilo Instagram */}
+      {activeVideo && (
+        <div
+          className={styles.modalOverlay}
+          onClick={closeVideoModal}
+          role="dialog"
+          aria-modal="true"
+          aria-label={`Vídeo de ${activeVideo.name}`}
+        >
+          <div
+            className={styles.modalContent}
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Cabeçalho do modal */}
+            <div className={styles.modalHeader}>
+              <div className={styles.modalSpeakerInfo}>
+                <img
+                  src={activeVideo.photo}
+                  alt={activeVideo.name}
+                  className={styles.modalAvatar}
+                />
+                <div>
+                  <p className={styles.modalName}>{activeVideo.name}</p>
+                  <p className={styles.modalRole}>{activeVideo.role}</p>
+                </div>
+              </div>
+              <button
+                className={styles.closeButton}
+                onClick={closeVideoModal}
+                aria-label="Fechar vídeo"
+              >
+                <IoClose />
+              </button>
+            </div>
+
+            {/* Vídeo */}
+            <div className={styles.videoWrapper}>
+              <video
+                key={activeVideo.videoUrl}
+                className={styles.videoPlayer}
+                src={activeVideo.videoUrl}
+                autoPlay
+                controls
+                playsInline
+              />
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

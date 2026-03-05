@@ -208,8 +208,8 @@
 }
 
 .footerLink:hover {
-  color: var(--color-accent);
-  border-bottom-color: var(--color-accent);
+  color: var(--color-primary-light);
+  border-bottom-color: var(--color-primary-light);
 }
 
 .gradientSphere {

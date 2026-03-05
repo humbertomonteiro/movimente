@@ -170,9 +170,9 @@
 .mapImage {
   position: relative;
   border-radius: 20px;
+  heigth: 250px;
   overflow: hidden;
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-  height: 150px;
 }
 
 .mapImg {

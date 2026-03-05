@@ -44,9 +44,15 @@ import {
   BsPersonCheck,
 } from "react-icons/bs";
 
+import { useEvent } from "../../contexts/EventContexts";
+
 import logo from "../../assets/imgs/logos/logo-movemente.png";
 
 export default function PrivacyPolicy() {
+  const { events } = useEvent();
+
+  const event = events.filter((e) => e.id === "movemente2026")[0];
+
   const currentDate = new Date().toLocaleDateString("pt-BR", {
     day: "2-digit",
     month: "2-digit",
@@ -60,7 +66,7 @@ export default function PrivacyPolicy() {
         <div className={styles.container}>
           <div className={styles.headerContent}>
             <a href="/" className={styles.logoLink}>
-              <img src={logo} alt="Movimente" className={styles.logo} />
+              <img src={logo} alt="Movemente" className={styles.logo} />
             </a>
             <div className={styles.buttonHeader}>
               <ButtonCTA link="/#ingressos" text="Garantir vaga" />
@@ -165,7 +171,7 @@ export default function PrivacyPolicy() {
 
               <div className={styles.sectionBody}>
                 <p className={styles.paragraph}>
-                  A <strong>Movimente</strong>, pessoa jurídica de direito
+                  A <strong>Movemente</strong>, pessoa jurídica de direito
                   privado, inscrita no CNPJ sob o nº{" "}
                   <strong>00.000.000/0001-00</strong>, com sede em São Luís -
                   MA, valoriza a privacidade e a proteção dos dados pessoais de
@@ -627,15 +633,7 @@ export default function PrivacyPolicy() {
                     <IoMailOutline className={styles.contactIcon} />
                     <div>
                       <span className={styles.contactLabel}>E-mail:</span>
-                      <strong>dpo@movimente.com.br</strong>
-                    </div>
-                  </div>
-
-                  <div className={styles.contactItem}>
-                    <IoDocumentTextOutline className={styles.contactIcon} />
-                    <div>
-                      <span className={styles.contactLabel}>Endereço:</span>
-                      <strong>Rua Exemplo, 123 - São Luís/MA</strong>
+                      <strong>{event.contacts.email}</strong>
                     </div>
                   </div>
 

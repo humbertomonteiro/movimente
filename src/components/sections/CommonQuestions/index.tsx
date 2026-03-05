@@ -4,6 +4,8 @@ import ButtonCTA from "../../shared/ButtonCTA";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { FaWhatsapp } from "react-icons/fa";
 
+import { useEvent } from "../../../contexts/EventContexts";
+
 interface Question {
   id: number;
   question: string;
@@ -11,6 +13,9 @@ interface Question {
 }
 
 export default function CommonQuestions() {
+  const { events } = useEvent();
+
+  const event = events.filter((e) => e.id === "movemente2026")[0];
   // Estado único para controlar qual pergunta está aberta
   const [openQuestion, setOpenQuestion] = useState<number | null>(null);
 
@@ -18,7 +23,7 @@ export default function CommonQuestions() {
   const questions: Question[] = [
     {
       id: 1,
-      question: "Para quem é o Congresso Autismo 2026?",
+      question: "Para quem é o Congresso Movemente 2026?",
       answer: (
         <p>
           O Congresso autismo 2026 é destinado a todos que desejam se aprofundar
@@ -71,7 +76,7 @@ export default function CommonQuestions() {
       answer: (
         <ul>
           <li>
-            O Congresso autismo 2026 reúne em um só lugar pesquisas inéditas,
+            O Congresso Movemente 2026 reúne em um só lugar pesquisas inéditas,
             especialistas de referência e conteúdos exclusivos sobre
             neurodesenvolvimento. É a oportunidade de atualizar seus
             conhecimentos, fortalecer sua atuação profissional, trocar
@@ -83,17 +88,17 @@ export default function CommonQuestions() {
     },
     {
       id: 4,
-      question: "Como entrar em contato com a equipe do Congresso autismo?",
+      question: "Como entrar em contato com a equipe do Congresso Movemente?",
       answer: (
         <p>
           Você pode entrar em contato com a equipe através do e-mail:{" "}
           <a
-            href="mailto:comercial@congressoautismo.com.br"
+            href={`mailto:${event.contacts.email}`}
             target="_blank"
             rel="noopener noreferrer"
             className={styles.link}
           >
-            comercial@congressoautismo.com.br
+            {event.contacts.email}
           </a>
         </p>
       ),
@@ -137,8 +142,7 @@ export default function CommonQuestions() {
     setOpenQuestion(openQuestion === id ? null : id);
   };
 
-  const whatsappLink =
-    "https://api.whatsapp.com/send?phone=5585992742323&text=Ol%C3%A1%2C%20equipe%20autismoAutismo!%20Estou%20interessado(a)%20no%20evento%20e%20gostaria%20de%20obter%20mais%20informa%C3%A7%C3%B5es.%20%0A%0APoderiam%20me%20ajudar%20com%20detalhes%20sobre%20inscri%C3%A7%C3%B5es%2C%20programa%C3%A7%C3%A3o%2C%20palestrantes%20e%20outras%20informa%C3%A7%C3%B5es%20relevantes%3F%20Obrigado(a)!%0A%0A";
+  const whatsappLink = `https://api.whatsapp.com/send?phone=55${event.contacts.whatsapp}&text=Ol%C3%A1%2C%20equipe%20autismoAutismo!%20Estou%20interessado(a)%20no%20evento%20e%20gostaria%20de%20obter%20mais%20informa%C3%A7%C3%B5es.%20%0A%0APoderiam%20me%20ajudar%20com%20detalhes%20sobre%20inscri%C3%A7%C3%B5es%2C%20programa%C3%A7%C3%A3o%2C%20palestrantes%20e%20outras%20informa%C3%A7%C3%B5es%20relevantes%3F%20Obrigado(a)!%0A%0A`;
 
   return (
     <section className={styles.section} id="faq">
@@ -147,7 +151,7 @@ export default function CommonQuestions() {
 
       <div className={styles.container} data-aos="zoom-in">
         {/* Card do WhatsApp */}
-        <div className={styles.ballonWhatsapp} >
+        <div className={styles.ballonWhatsapp}>
           <FaWhatsapp />
           <h3>Prefere falar conosco?</h3>
           <p>Fale com nosso time de suporte pelo WhatsApp</p>
@@ -155,11 +159,12 @@ export default function CommonQuestions() {
             data-color="secondary"
             text="FALAR COM O TIME"
             link={whatsappLink}
+            target="_blank"
           />
         </div>
 
         {/* Lista de Perguntas */}
-        <ul className={styles.questions} >
+        <ul className={styles.questions}>
           {questions.map((item) => (
             <li key={item.id} className={styles.question}>
               <button

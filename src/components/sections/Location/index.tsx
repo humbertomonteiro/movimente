@@ -12,11 +12,6 @@ import GridOverlay from "../../shared/GridOverlay";
 
 import { useEvent } from "../../../contexts/EventContexts";
 
-// const hotelImage =
-//   "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/16/1a/ea/54/hotel-presidente-4s.jpg?w=900&h=500&s=1";
-// const mapImage =
-//   "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/16/1a/ea/54/hotel-presidente-4s.jpg?w=900&h=500&s=1";
-
 export default function Location() {
   const { events } = useEvent();
 

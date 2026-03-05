@@ -4,52 +4,58 @@ import { GiBrain } from "react-icons/gi";
 import ButtonCTA from "../../shared/ButtonCTA";
 import GridOverlay from "../../shared/GridOverlay";
 
+import { useEvent } from "../../../contexts/EventContexts";
+
 export default function Tickets() {
+  const { events } = useEvent();
+
+  const event = events.filter((e) => e.id === "movemente2026")[0];
+
   const tickets = [
     {
       id: "inteiro",
       name: "INGRESSO INTEIRO",
-      fullPrice: 397,
-      installmentPrice: 297,
+      fullPrice: event.tickets.valueDefault,
+      installmentPrice: event.tickets.valueAll,
       icon: <FaTicketAlt className={styles.ticketIcon} />,
       features: [
-        "Acesso a todas as palestras dos 3 dias",
-        "Certificado de 40h",
-        "Material digital completo",
-        "Acesso vitalício às gravações",
-        "Coffee break incluso",
-        "Brinde exclusivo do evento",
+        "Acesso a todas as palestras dos 2 dias",
+        "Certificado de 20h",
+        "Palestrantes nacionais e internacionais de referência, trazendo conteúdos respaldados por pesquisas científicas de nível 1A e 1B.",
+        "Estrutura ampla, moderna, climatizada e 100% acessível",
       ],
+      link: event.tickets.linkTicketAll,
     },
     {
       id: "meia",
-      name: "MEIA-ENTRADA*",
-      fullPrice: 247,
-      installmentPrice: 147,
+      name: "MEIA-ENTRADA",
+      fullPrice: event.tickets.valueDefault,
+      installmentPrice: event.tickets.valueHalf,
       icon: <GiBrain className={styles.ticketIcon} />,
       features: [
-        "Acesso a todas as palestras dos 3 dias",
-        "Certificado de 40h",
-        "Material digital completo",
-        "Acesso vitalício às gravações",
-        "Coffee break incluso",
+        "Acesso a todas as palestras dos 2 dias",
+        "Certificado de 20h",
         "Benefício para estudantes e professores",
+        "Palestrantes nacionais e internacionais de referência, trazendo conteúdos respaldados por pesquisas científicas de nível 1A e 1B.",
+        "Estrutura ampla, moderna, climatizada e 100% acessível",
       ],
+      link: event.tickets.linkTicketHalf,
     },
     {
       id: "grupo",
       name: "INGRESSO GRUPO",
-      fullPrice: 1188,
-      installmentPrice: 847,
+      fullPrice: event.tickets.valueDefault * 5,
+      installmentPrice: event.tickets.group * 5,
       icon: <FaUsers className={styles.ticketIcon} />,
       features: [
         "Acesso para 5 pessoas",
         "Certificado individual para todos",
-        "Material completo para equipe",
-        "Acesso vitalício às gravações",
         "Sessão exclusiva de Q&A",
         "Suporte prioritário",
+        "Palestrantes nacionais e internacionais de referência, trazendo conteúdos respaldados por pesquisas científicas de nível 1A e 1B.",
+        "Estrutura ampla, moderna, climatizada e 100% acessível",
       ],
+      link: event.tickets.linkTicketGroup,
     },
   ];
 
@@ -123,7 +129,7 @@ export default function Tickets() {
                 {/* Botão sempre visível */}
                 <div className={styles.buttonWrapper}>
                   <ButtonCTA
-                    link="#checkout"
+                    link={ticket.link}
                     text="GARANTIR VAGA"
                     data-color="primary"
                   />
@@ -138,7 +144,7 @@ export default function Tickets() {
           <p className={styles.footerNote}>
             *Meia-entrada válida para estudantes, professores e profissionais da
             rede pública.
-            <a href="#duvidas" className={styles.footerLink}>
+            <a href="#faq" className={styles.footerLink}>
               {" "}
               Verifique os critérios
             </a>

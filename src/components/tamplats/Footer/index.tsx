@@ -13,28 +13,34 @@ import {
 import logoFooter from "../../../assets/gifs/logo.gif";
 import { Link } from "react-router-dom";
 
+import { useEvent } from "../../../contexts/EventContexts";
+
 export default function Footer() {
+  const { events } = useEvent();
+
+  const event = events.filter((e) => e.id === "movemente2026")[0];
+
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
     {
       icon: <FaFacebookF />,
-      url: "https://facebook.com/congressoconect",
+      url: event.socials.facebook,
       name: "Facebook",
     },
     {
       icon: <FaInstagram />,
-      url: "https://instagram.com/congressoconect",
+      url: event.socials.instagram,
       name: "Instagram",
     },
     {
       icon: <FaYoutube />,
-      url: "https://youtube.com/congressoconect",
+      url: event.socials.youtube,
       name: "YouTube",
     },
     {
       icon: <FaLinkedinIn />,
-      url: "https://linkedin.com/company/congressoconect",
+      url: event.socials.linkedin,
       name: "LinkedIn",
     },
   ];
@@ -50,19 +56,23 @@ export default function Footer() {
   const contactInfo = [
     {
       icon: <FaWhatsapp />,
-      text: "(88) 99114-2323",
-      url: "https://wa.link/exemplo",
+      text: event.contacts.phone,
+      url: `https://wa.link/55${event.contacts.phone}`,
     },
     {
       icon: <FaEnvelope />,
-      text: "contato@movemente.com.br",
-      url: "mailto:contato@movemente.com.br",
+      text: event.contacts.email,
+      url: `mailto:${event.contacts.email}`,
     },
-    { icon: <FaPhone />, text: "(88) 345967890", url: "tel:+558834568790" },
+    {
+      icon: <FaPhone />,
+      text: event.contacts.phone,
+      url: `https://wa.link/55${event.contacts.phone}`,
+    },
     {
       icon: <FaMapMarkerAlt />,
-      text: "Lugar Legal",
-      url: "https://maps.google.com",
+      text: event.location,
+      url: event.linkLocation,
     },
   ];
 
