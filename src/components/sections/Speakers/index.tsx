@@ -7,9 +7,6 @@ import GridOverlay from "../../shared/GridOverlay";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, A11y } from "swiper/modules";
 
-// Imagens
-import logo from "../../../assets/imgs/logos/logo-movemente.png";
-
 import palestrante1 from "../../../assets/imgs/speakers/palestrante.jpeg";
 import kaduLins from "../../../assets/imgs/speakers/kadu-links.png";
 import kaduLinsVideo from "../../../assets/videos/kadu-lins.mp4";
@@ -229,8 +226,6 @@ export default function Speakers() {
                     </div>
                   )}
                 </div>
-
-                <img src={logo} alt="logo" className={styles.logoBg} />
               </div>
             </SwiperSlide>
           ))}

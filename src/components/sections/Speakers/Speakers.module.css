@@ -229,14 +229,6 @@
   transform: scale(1.04);
 }
 
-.logoBg {
-  width: 50%;
-  position: absolute;
-  bottom: 2rem;
-  left: 1rem;
-  opacity: 0.05;
-}
-
 /* Content */
 .content {
   padding: 24px 24px 12px;
