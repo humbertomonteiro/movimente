@@ -12,7 +12,7 @@ import logo from "../../../assets/imgs/logos/logo-movemente.png";
 
 import palestrante1 from "../../../assets/imgs/speakers/palestrante.jpeg";
 import kaduLins from "../../../assets/imgs/speakers/kadu-links.png";
-import kaduLinsVideo from "../../../assets/videos/Kaku-lins.mp4";
+import kaduLinsVideo from "../../../assets/videos/kadu-lins.mp4";
 
 // React Icons para redes sociais
 import { FaLinkedinIn, FaTwitter, FaInstagram, FaGlobe } from "react-icons/fa";
@@ -26,7 +26,7 @@ interface Speaker {
   bio: string;
   photo: string;
   expertise: string[];
-  videoUrl?: string; // URL do vídeo (YouTube embed, Vimeo, etc.)
+  videoUrl?: string;
   social?: {
     linkedin?: string;
     twitter?: string;
