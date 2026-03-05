@@ -4,7 +4,7 @@ import { BsStars } from "react-icons/bs";
 
 // Swiper
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, A11y } from "swiper/modules";
+import { A11y } from "swiper/modules";
 
 // Componentes internos
 import TestimonialCard from "./TestimonialCard";
@@ -125,6 +125,7 @@ export default function TestimonialsSection({
   subtitle = "Depoimentos de famílias e profissionais que já participaram do Movimente",
   testimonials = mockTestimonials,
 }: TestimonialsSectionProps) {
+  // ✅ FIX: instância direta — sem módulo Navigation para evitar o bug de pular slides
   const [swiperInstance, setSwiperInstance] = useState<any>(null);
 
   return (
@@ -145,16 +146,13 @@ export default function TestimonialsSection({
           <p className={styles.subtitle}>{subtitle}</p>
         </div>
 
-        {/* Stats Component */}
-        {/* <TestimonialStats /> */}
-
         {/* Swiper Carrossel */}
         <div
           className={styles.carouselWrapper}
           data-aos="fade-up"
           data-aos-delay="200"
         >
-          {/* Botões de navegação customizados */}
+          {/* Botões chamam slidePrev/slideNext direto na instância */}
           <div className={styles.navigationButtons}>
             <button
               className={styles.navButton}
@@ -172,27 +170,14 @@ export default function TestimonialsSection({
             </button>
           </div>
 
+          {/* Swiper sem o módulo Navigation — os botões acima já controlam tudo */}
           <Swiper
-            modules={[Navigation, Pagination, A11y]}
+            modules={[A11y]}
             spaceBetween={30}
             slidesPerView={1}
-            navigation={{
-              prevEl: `.${styles.navButton}:first-child`,
-              nextEl: `.${styles.navButton}:last-child`,
-            }}
-            pagination={{
-              clickable: true,
-              el: `.${styles.pagination}`,
-              bulletClass: styles.bullet,
-              bulletActiveClass: styles.bulletActive,
-            }}
             breakpoints={{
-              640: {
-                slidesPerView: 2,
-              },
-              1024: {
-                slidesPerView: 3,
-              },
+              640: { slidesPerView: 2 },
+              1024: { slidesPerView: 3 },
             }}
             onSwiper={setSwiperInstance}
             className={styles.swiper}

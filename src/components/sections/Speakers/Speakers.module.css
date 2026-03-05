@@ -135,10 +135,6 @@
     0 8px 10px -6px rgba(0, 0, 0, 0.1);
 }
 
-.cardInner:hover .avatar {
-  transform: scale(1.05);
-}
-
 /* Avatar Section */
 .avatarSection {
   padding: 30px 30px 0 30px;
@@ -223,10 +219,6 @@
 
 .avatarButton.hasVideo:hover .playHint {
   opacity: 1;
-}
-
-.avatarButton.hasVideo:hover .avatar {
-  transform: scale(1.04);
 }
 
 /* Content */

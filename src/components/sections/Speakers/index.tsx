@@ -5,7 +5,7 @@ import GridOverlay from "../../shared/GridOverlay";
 
 // Swiper
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, A11y } from "swiper/modules";
+import { A11y } from "swiper/modules";
 
 import palestrante1 from "../../../assets/imgs/speakers/palestrante.jpeg";
 
@@ -16,7 +16,13 @@ import carolineBitar from "../../../assets/imgs/speakers/caroline-bitar.jpeg";
 import carolineBitarVideo from "../../../assets/videos/caroline-bitar.mp4";
 
 // React Icons para redes sociais
-import { FaLinkedinIn, FaTwitter, FaInstagram, FaGlobe } from "react-icons/fa";
+import {
+  FaLinkedinIn,
+  FaTwitter,
+  FaInstagram,
+  FaGlobe,
+  FaFacebook,
+} from "react-icons/fa";
 import { IoClose, IoPlay } from "react-icons/io5";
 
 interface Speaker {
@@ -33,6 +39,7 @@ interface Speaker {
     twitter?: string;
     instagram?: string;
     website?: string;
+    facebook?: string;
   };
 }
 
@@ -45,36 +52,32 @@ const speakers: Speaker[] = [
     bio: "Especialista em desenvolvimento infantil e autismo com 15 anos de experiência. Palestrante internacional e autora de livros sobre intervenção precoce.",
     photo: palestrante1,
     expertise: ["Neuropediatria", "Intervenção Precoce"],
-    social: {
-      linkedin: "https://linkedin.com",
-      twitter: "https://twitter.com",
-      instagram: "https://instagram.com",
-      website: "https://example.com",
-    },
+    social: {},
   },
   {
     id: "2",
     name: "Kadu Lins",
-    role: "Educador Físico",
-    company: "Clínica ABA",
-    bio: "Referência em atividade física como ferramenta de desenvolvimento psicossocial para pessoas neuroatípicas. Possui mais de 10 anos de atuação na área.",
+    role: "Educador Físico e fundador do Instituto do Autismo",
+    company: "Instituto do Autismo",
+    bio: "Kadu Lins é formado em Educação Física e Psicomotricista. Mestrando em ciência do movimento, com estudos em desenvolvimento motor infantil. Formações acadêmicas internacionais nos Estados Unidos e na Austrália. Fundador do Instituto do Autismo. Há mais de 10 anos, dedica-se a transformar a vida de famílias atípicas, promovendo conhecimento, cuidado e compreensão sobre o autismo e a inclusão, atendendo diariamente mais de 1200 famílias e lutando para terem uma melhor qualidade de vida.",
     photo: kaduLins,
     expertise: ["Psicomotricidade ", "ABA"],
     videoUrl: kaduLinsVideo,
     social: {
-      website:
-        "https://kadulins.com.br/links/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGnF4sqHnSDG-grIvvyz7as6pTcKM8J-5cGzkmK1BAFNl59r_e-BHyZbiaZKGs_aem_AFg20jdydZRDqly__xKOrw",
+      website: "https://kadulins.com",
       instagram: "https://www.instagram.com/kadu.lins/",
+      linkedin: "https://br.linkedin.com/in/kadu-lins-44417417b",
+      facebook: "https://www.facebook.com/autismoparafamilias",
     },
   },
   {
     id: "3",
-    name: "Caroline Bitar da Cunha Olegário ",
-    role: "psicóloga",
+    name: "Caroline Bitar da Cunha Olegário",
+    role: "Psicóloga",
     company: "BITAR ATIVIDADES DE APOIO A EDUCACAO LTDA",
-    bio: "Carol Bitar é psicóloga (CRP 03/14361), especialista em Neurociência e Comportamento, autora do livro “Socorro, tenho filhos” e mãe. Mais de 10 anos de experiência em atendimentos clínicos na abordagem da Terapia Cognitivo-comportamental e com prática baseada em evidência. Além disso, ministra seus cursos com foco no TDAH na redução de sintomas e prejuízos do transtorno. ",
+    bio: 'Carol Bitar é psicóloga (CRP 03/14361), especialista em Neurociência e Comportamento, autora do livro "Socorro, tenho filhos" e mãe. Mais de 10 anos de experiência em atendimentos clínicos na abordagem da Terapia Cognitivo-comportamental e com prática baseada em evidência. Além disso, ministra seus cursos com foco no TDAH na redução de sintomas e prejuízos do transtorno.',
     photo: carolineBitar,
-    expertise: ["especialista em comportamento"],
+    expertise: ["Especialista em Comportamento"],
     videoUrl: carolineBitarVideo,
     social: {
       website: "https://carolbitar.com.br",
@@ -84,6 +87,8 @@ const speakers: Speaker[] = [
 ];
 
 export default function Speakers() {
+  // ✅ Instância direta do Swiper — evita o bug de pular slides
+  // causado pelo módulo Navigation tentando encontrar botões via seletor CSS de módulos
   const [swiperInstance, setSwiperInstance] = useState<any>(null);
   const [activeVideo, setActiveVideo] = useState<Speaker | null>(null);
 
@@ -97,6 +102,8 @@ export default function Speakers() {
         return <FaInstagram />;
       case "website":
         return <FaGlobe />;
+      case "facebook":
+        return <FaFacebook />;
       default:
         return null;
     }
@@ -128,7 +135,7 @@ export default function Speakers() {
           <p className={styles.subtitle}>Conheça nosso time de especialistas</p>
         </div>
 
-        {/* Navigation Buttons */}
+        {/* Botões chamam slidePrev/slideNext direto na instância */}
         <div className={styles.navigationButtons}>
           <button
             className={styles.navButton}
@@ -146,28 +153,14 @@ export default function Speakers() {
           </button>
         </div>
 
-        {/* Swiper Carrossel */}
+        {/* Swiper sem o módulo Navigation — os botões acima já controlam tudo */}
         <Swiper
-          modules={[Navigation, Pagination, A11y]}
+          modules={[A11y]}
           spaceBetween={30}
           slidesPerView={1}
-          navigation={{
-            prevEl: `.${styles.navButton}:first-child`,
-            nextEl: `.${styles.navButton}:last-child`,
-          }}
-          pagination={{
-            clickable: true,
-            el: `.${styles.pagination}`,
-            bulletClass: styles.bullet,
-            bulletActiveClass: styles.bulletActive,
-          }}
           breakpoints={{
-            640: {
-              slidesPerView: 2,
-            },
-            1024: {
-              slidesPerView: 3,
-            },
+            640: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
           }}
           onSwiper={setSwiperInstance}
           className={styles.swiper}
@@ -176,17 +169,15 @@ export default function Speakers() {
             <SwiperSlide key={speaker.id}>
               <div className={styles.card}>
                 <div className={styles.cardInner}>
-                  {/* Avatar Section */}
+                  {/* Avatar */}
                   <div className={styles.avatarSection}>
                     <div className={styles.avatarContainer}>
-                      {/* Avatar clicável para abrir vídeo */}
                       <button
                         className={`${styles.avatarButton} ${speaker.videoUrl ? styles.hasVideo : ""}`}
                         onClick={() => openVideoModal(speaker)}
                         aria-label={`Ver vídeo de ${speaker.name}`}
                         disabled={!speaker.videoUrl}
                       >
-                        {/* Anel de gradiente estilo Instagram */}
                         {speaker.videoUrl && (
                           <span
                             className={styles.storyRing}
@@ -208,15 +199,13 @@ export default function Speakers() {
                     </div>
                   </div>
 
-                  {/* Content */}
+                  {/* Conteúdo */}
                   <div className={styles.content}>
                     <h3 className={styles.name}>{speaker.name}</h3>
                     <p className={styles.role}>{speaker.role}</p>
                     <p className={styles.company}>{speaker.company}</p>
-
                     <p className={styles.bio}>{speaker.bio}</p>
 
-                    {/* Expertise Tags */}
                     <div className={styles.expertise}>
                       {speaker.expertise.map((skill, index) => (
                         <span key={index} className={styles.tag}>
@@ -226,36 +215,40 @@ export default function Speakers() {
                     </div>
                   </div>
 
-                  {/* Social Links — fixos no rodapé do card */}
-                  {speaker.social && (
-                    <div className={styles.socialFooter}>
-                      {Object.entries(speaker.social).map(([platform, url]) => (
-                        <a
-                          key={platform}
-                          href={url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className={styles.socialLink}
-                          aria-label={`${platform} de ${speaker.name}`}
-                        >
-                          {getSocialIcon(platform)}
-                        </a>
-                      ))}
-                    </div>
-                  )}
+                  {/* Social Footer — só renderiza se tiver ao menos um link */}
+                  {speaker.social &&
+                    Object.values(speaker.social).some(Boolean) && (
+                      <div className={styles.socialFooter}>
+                        {Object.entries(speaker.social).map(
+                          ([platform, url]) =>
+                            url ? (
+                              <a
+                                key={platform}
+                                href={url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className={styles.socialLink}
+                                aria-label={`${platform} de ${speaker.name}`}
+                              >
+                                {getSocialIcon(platform)}
+                              </a>
+                            ) : null,
+                        )}
+                      </div>
+                    )}
                 </div>
               </div>
             </SwiperSlide>
           ))}
         </Swiper>
 
-        {/* CTA Button */}
+        {/* CTA */}
         <div className={styles.ctaContainer} data-aos="fade-up">
           <ButtonCTA link="#tickets" text="Garantir Vaga" />
         </div>
       </div>
 
-      {/* Modal de Vídeo — estilo Instagram */}
+      {/* Modal de Vídeo — estilo Instagram Stories */}
       {activeVideo && (
         <div
           className={styles.modalOverlay}
@@ -268,7 +261,6 @@ export default function Speakers() {
             className={styles.modalContent}
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Cabeçalho do modal */}
             <div className={styles.modalHeader}>
               <div className={styles.modalSpeakerInfo}>
                 <img
@@ -290,7 +282,6 @@ export default function Speakers() {
               </button>
             </div>
 
-            {/* Vídeo */}
             <div className={styles.videoWrapper}>
               <video
                 key={activeVideo.videoUrl}
