@@ -35,7 +35,6 @@ interface Speaker {
   id: string;
   name: string;
   role: string;
-  company: string;
   bio: string;
   photo: string;
   expertise: string[];
@@ -54,18 +53,31 @@ const speakers: Speaker[] = [
     id: "0",
     name: "Dr. Paulo Liberalesso",
     role: "Médico Neuropediatra",
-    company: "Médico",
     bio: " e Médico Neuropediatra, possui mestrado em Neurociências, doutorado em Distúrbios da Comunicação Humana, pós-graduado em Neurofisiologia, pós-graduado em Análise do Comportamento, e é diretor científico do Grupo IEPSIS.",
     photo: pauloLiberalesso,
     expertise: ["Neurocientista", "Intervenção Precoce"],
     videoUrl: pauloLiberalessoVideo,
-    social: {},
+    social: {
+      instagram: "https://www.instagram.com/pauloliberalesso/",
+    },
+  },
+  {
+    id: "4",
+    name: "João Vitor de Paiva Bittencourt",
+    role: "Educador Físico",
+    bio: `Ele é influenciador digital (@jvdepaiva), com mais de 1 milhão de seguidores no Instagram e tik tok, Jovem Ativista do Unicef (um dos cinco no País a integrar o grupo de 100 lideranças jovens globais do Fundo no planeta), ator (protagonista no filme Colegas e o herdeiro e atuou na minissérie E, agora, quem fica com a mamãe?, no SBT) , modelo, primeiro aluno com T21 a se formar no curso de Educação Física da PUC-Goiás, eleito o Melhor Influenciador brasileiro na categoria Diversidade e Inclusão 2024 no prêmio ibest (considerado o Oscar da internet brasileira) e faz um trabalho bacana pelos direitos das pessoas com deficiência no Brasil
+Expertise: ações para inclusão, palestrante`,
+    photo: jvDePaiva,
+    expertise: ["Palestrante"],
+    videoUrl: jvDePaivaVideo,
+    social: {
+      instagram: "https://www.instagram.com/jvdepaiva/",
+    },
   },
   {
     id: "1",
     name: "Dra. Ana Silva",
     role: "Neuropediatra",
-    company: "Médica",
     bio: "Especialista em desenvolvimento infantil e autismo com 15 anos de experiência. Palestrante internacional e autora de livros sobre intervenção precoce.",
     photo: palestrante1,
     expertise: ["Neuropediatria", "Intervenção Precoce"],
@@ -75,7 +87,6 @@ const speakers: Speaker[] = [
     id: "2",
     name: "Kadu Lins",
     role: "Educador Físico e fundador do Instituto do Autismo",
-    company: "Instituto do Autismo",
     bio: "Kadu Lins é formado em Educação Física e Psicomotricista. Mestrando em ciência do movimento, com estudos em desenvolvimento motor infantil. Formações acadêmicas internacionais nos Estados Unidos e na Austrália. Fundador do Instituto do Autismo. Há mais de 10 anos, dedica-se a transformar a vida de famílias atípicas, promovendo conhecimento, cuidado e compreensão sobre o autismo e a inclusão, atendendo diariamente mais de 1200 famílias e lutando para terem uma melhor qualidade de vida.",
     photo: kaduLins,
     expertise: ["Psicomotricidade ", "ABA"],
@@ -91,7 +102,6 @@ const speakers: Speaker[] = [
     id: "3",
     name: "Caroline Bitar da Cunha Olegário",
     role: "Psicóloga",
-    company: "BITAR ATIVIDADES DE APOIO A EDUCACAO LTDA",
     bio: 'Carol Bitar é psicóloga (CRP 03/14361), especialista em Neurociência e Comportamento, autora do livro "Socorro, tenho filhos" e mãe. Mais de 10 anos de experiência em atendimentos clínicos na abordagem da Terapia Cognitivo-comportamental e com prática baseada em evidência. Além disso, ministra seus cursos com foco no TDAH na redução de sintomas e prejuízos do transtorno.',
     photo: carolineBitar,
     expertise: ["Especialista em Comportamento"],
@@ -99,20 +109,6 @@ const speakers: Speaker[] = [
     social: {
       website: "https://carolbitar.com.br",
       instagram: "https://www.instagram.com/carolbitar_/",
-    },
-  },
-  {
-    id: "4",
-    name: "João Vitor de Paiva Bittencourt",
-    role: "Educador Físico",
-    company: "João Vitor de Paiva Bittencourt Ltda",
-    bio: `Ele é influenciador digital (@jvdepaiva), com mais de 1 milhão de seguidores no Instagram e tik tok, Jovem Ativista do Unicef (um dos cinco no País a integrar o grupo de 100 lideranças jovens globais do Fundo no planeta), ator (protagonista no filme Colegas e o herdeiro e atuou na minissérie E, agora, quem fica com a mamãe?, no SBT) , modelo, primeiro aluno com T21 a se formar no curso de Educação Física da PUC-Goiás, eleito o Melhor Influenciador brasileiro na categoria Diversidade e Inclusão 2024 no prêmio ibest (considerado o Oscar da internet brasileira) e faz um trabalho bacana pelos direitos das pessoas com deficiência no Brasil
-Expertise: ações para inclusão, palestrante`,
-    photo: jvDePaiva,
-    expertise: ["Palestrante"],
-    videoUrl: jvDePaivaVideo,
-    social: {
-      instagram: "https://www.instagram.com/jvdepaiva/",
     },
   },
 ];
@@ -234,7 +230,6 @@ export default function Speakers() {
                   <div className={styles.content}>
                     <h3 className={styles.name}>{speaker.name}</h3>
                     <p className={styles.role}>{speaker.role}</p>
-                    <p className={styles.company}>{speaker.company}</p>
                     <p className={styles.bio}>{speaker.bio}</p>
 
                     <div className={styles.expertise}>

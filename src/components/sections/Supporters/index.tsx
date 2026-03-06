@@ -6,6 +6,7 @@ import logoApoiador2 from "../../../assets/imgs/supporters/viva-aprender.jpg";
 import logoPatrocinador1 from "../../../assets/imgs/supporters/governo-maranhao.png";
 import logoVeiculo1 from "../../../assets/imgs/supporters/grupo-mirante.jpg";
 import logoVeiculo2 from "../../../assets/imgs/supporters/imirante.jpg";
+import nutrimax from "../../../assets/imgs/supporters/nutrimax.png";
 
 export default function Supporters() {
   return (
@@ -15,12 +16,13 @@ export default function Supporters() {
 
         {/* Patrocinador */}
         <div className={styles.patrocinador}>
-          <span className={styles.tag}>Patrocinador oficial</span>
+          <span className={styles.tag}>Patrocinadores</span>
           <img
             src={logoPatrocinador1}
             alt="Governo do Maranhão"
             className={styles.logoGrande}
           />
+          <img src={nutrimax} alt="Nutrimax" className={styles.logoGrande} />
         </div>
 
         {/* Apoiadores e Veículos lado a lado */}
