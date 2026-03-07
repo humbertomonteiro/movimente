@@ -135,8 +135,7 @@ export default function Tickets() {
                 {/* Botão sempre visível */}
                 <div className={styles.buttonWrapper}>
                   <ButtonCTA
-                    // link={ticket.link}
-                    // text="GARANTIR VAGA"
+                    link={ticket.link}
                     text={ticket.buttonText}
                     data-color="primary"
                     disabled={ticket.disabled}
