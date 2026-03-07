@@ -175,7 +175,13 @@ export default function Footer() {
             © {currentYear} Movemente. Todos os direitos reservados.
           </p>
           <p className={styles.credit}>
-            Feito com <FaHeart className={styles.heartIcon} /> por Humdev
+            Feito com <FaHeart className={styles.heartIcon} /> por{" "}
+            <a
+              href="https://portfolio-humberto-monteiro.vercel.app/"
+              target="_blank"
+            >
+              Humdev
+            </a>
           </p>
           <div className={styles.policyLinks}>
             <Link to="/politica-privacidade">Política de Privacidade</Link>

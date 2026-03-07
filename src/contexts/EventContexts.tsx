@@ -28,9 +28,11 @@ export interface EventData {
     valueDefault: number;
     valueAll: number;
     valueHalf: number;
+    valuePremium: number;
     group: number;
     linkTicketAll: string;
     linkTicketHalf: string;
+    linkTicketPremium: string;
     linkTicketGroup: string;
   };
 }
@@ -85,9 +87,13 @@ export const EventProvider = ({ children }: EventProviderProps) => {
         valueDefault: 899.9,
         valueAll: 799.98,
         valueHalf: 399.99,
+        valuePremium: 599.99,
         group: 349.99,
-        linkTicketAll: "",
-        linkTicketHalf: "",
+        linkTicketAll:
+          "https://www.sympla.com.br/evento/movemente/3337756?share_id=whatsapp",
+        linkTicketHalf:
+          "https://www.sympla.com.br/evento/movemente/3337756?share_id=whatsapp",
+        linkTicketPremium: "",
         linkTicketGroup: "",
       },
     },

@@ -25,6 +25,8 @@ export default function Tickets() {
         "Estrutura ampla, moderna, climatizada e 100% acessível",
       ],
       link: event.tickets.linkTicketAll,
+      buttonText: "GARANTIR AGORA",
+      disabled: false,
     },
     {
       id: "meia",
@@ -40,22 +42,26 @@ export default function Tickets() {
         "Estrutura ampla, moderna, climatizada e 100% acessível",
       ],
       link: event.tickets.linkTicketHalf,
+      buttonText: "GARANTIR AGORA",
+      disabled: false,
     },
     {
-      id: "grupo",
-      name: "INGRESSO GRUPO",
-      fullPrice: event.tickets.valueDefault * 5,
-      installmentPrice: event.tickets.group * 5,
+      id: "premiuM",
+      name: "INGRESSO PREMIUM",
+      fullPrice: event.tickets.valueDefault,
+      installmentPrice: event.tickets.valuePremium,
       icon: <FaUsers className={styles.ticketIcon} />,
       features: [
-        "Acesso para 5 pessoas",
-        "Certificado individual para todos",
+        "Acesso a todas as palestras dos 2 dias",
+        "Certificado de 20h",
         "Sessão exclusiva de Q&A",
         "Suporte prioritário",
         "Palestrantes nacionais e internacionais de referência, trazendo conteúdos respaldados por pesquisas científicas de nível 1A e 1B.",
         "Estrutura ampla, moderna, climatizada e 100% acessível",
       ],
       link: event.tickets.linkTicketGroup,
+      buttonText: "EM BREVE",
+      disabled: true,
     },
   ];
 
@@ -131,9 +137,9 @@ export default function Tickets() {
                   <ButtonCTA
                     // link={ticket.link}
                     // text="GARANTIR VAGA"
-                    text="EM BREVE"
+                    text={ticket.buttonText}
                     data-color="primary"
-                    disabled
+                    disabled={ticket.disabled}
                   />
                 </div>
               </div>

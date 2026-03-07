@@ -345,6 +345,11 @@
   gap: 0.3rem;
 }
 
+.credit a {
+  color: var(--color-text-gray);
+  text-decoration: none;
+}
+
 .heartIcon {
   color: var(--color-tertiary);
   animation: heartbeat 1.5s ease infinite;
