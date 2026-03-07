@@ -85,8 +85,8 @@ export const EventProvider = ({ children }: EventProviderProps) => {
       },
       tickets: {
         valueDefault: 899.9,
-        valueAll: 799.98,
-        valueHalf: 399.99,
+        valueAll: 699.99,
+        valueHalf: 349.99,
         valuePremium: 599.99,
         group: 349.99,
         linkTicketAll:
