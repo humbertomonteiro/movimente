@@ -1,0 +1,100 @@
+.header {
+  position: relative;
+  background: #ffffff;
+  width: 100%;
+}
+
+/* Linha colorida no topo — pega a cor primária do projeto */
+.topBar {
+  height: 4px;
+  background: var(--color-primary, #6366f1);
+  width: 100%;
+}
+
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 32px 24px 28px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+/* Logo */
+.logoWrapper {
+  flex-shrink: 0;
+}
+
+.logo {
+  height: 56px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* Divisor vertical entre logo e texto */
+.divider {
+  width: 1.5px;
+  height: 48px;
+  background: #e2e8f0;
+  flex-shrink: 0;
+}
+
+/* Grupo de textos */
+.textGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.eyebrow {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-primary, #6366f1);
+}
+
+.title {
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.subtitle {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Sombra sutil na base do header */
+.bottomShadow {
+  height: 1px;
+  background: #f1f5f9;
+  box-shadow:
+    0 1px 0 #f1f5f9,
+    0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+/* ── Responsivo ── */
+@media (max-width: 480px) {
+  .container {
+    padding: 24px 16px 20px;
+    gap: 16px;
+  }
+
+  .logo {
+    height: 40px;
+  }
+
+  .divider {
+    height: 36px;
+  }
+
+  .title {
+    font-size: 1.2rem;
+  }
+}
