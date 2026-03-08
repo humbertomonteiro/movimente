@@ -45,24 +45,24 @@ export default function Tickets() {
       buttonText: "GARANTIR AGORA",
       disabled: false,
     },
-    {
-      id: "premiuM",
-      name: "INGRESSO PREMIUM",
-      fullPrice: event.tickets.valueDefault,
-      installmentPrice: event.tickets.valuePremium,
-      icon: <FaUsers className={styles.ticketIcon} />,
-      features: [
-        "Acesso a todas as palestras dos 2 dias",
-        "Certificado de 20h",
-        "Sessão exclusiva de Q&A",
-        "Suporte prioritário",
-        "Palestrantes nacionais e internacionais de referência, trazendo conteúdos respaldados por pesquisas científicas de nível 1A e 1B.",
-        "Estrutura ampla, moderna, climatizada e 100% acessível",
-      ],
-      link: event.tickets.linkTicketGroup,
-      buttonText: "EM BREVE",
-      disabled: true,
-    },
+    // {
+    //   id: "premiuM",
+    //   name: "INGRESSO PREMIUM",
+    //   fullPrice: event.tickets.valueDefault,
+    //   installmentPrice: event.tickets.valuePremium,
+    //   icon: <FaUsers className={styles.ticketIcon} />,
+    //   features: [
+    //     "Acesso a todas as palestras dos 2 dias",
+    //     "Certificado de 20h",
+    //     "Sessão exclusiva de Q&A",
+    //     "Suporte prioritário",
+    //     "Palestrantes nacionais e internacionais de referência, trazendo conteúdos respaldados por pesquisas científicas de nível 1A e 1B.",
+    //     "Estrutura ampla, moderna, climatizada e 100% acessível",
+    //   ],
+    //   link: event.tickets.linkTicketGroup,
+    //   buttonText: "EM BREVE",
+    //   disabled: true,
+    // },
   ];
 
   const formatPrice = (price: number) => {
