@@ -67,7 +67,7 @@ export default function oportunidades() {
       </h2>
 
       <p className={styles.subtitle} data-aos="zoom-in">
-        Esse Congresso é o maior espaço de crescimento, aprendizado e conexões
+        Esse Movimento é o maior espaço de crescimento, aprendizado e conexões
         sobre transtornos do neurodesenvolvimento do Norte e Nordeste.
       </p>
 

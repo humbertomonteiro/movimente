@@ -1,5 +1,5 @@
 import styles from "./Tickets.module.css";
-import { FaCheck, FaUsers, FaTicketAlt } from "react-icons/fa";
+import { FaCheck, FaTicketAlt } from "react-icons/fa";
 import { GiBrain } from "react-icons/gi";
 import ButtonCTA from "../../shared/ButtonCTA";
 import GridOverlay from "../../shared/GridOverlay";
@@ -50,7 +50,7 @@ export default function Tickets() {
     //   name: "INGRESSO PREMIUM",
     //   fullPrice: event.tickets.valueDefault,
     //   installmentPrice: event.tickets.valuePremium,
-    //   icon: <FaUsers className={styles.ticketIcon} />,
+    //   icon: className={styles.ticketIcon} />,
     //   features: [
     //     "Acesso a todas as palestras dos 2 dias",
     //     "Certificado de 20h",
