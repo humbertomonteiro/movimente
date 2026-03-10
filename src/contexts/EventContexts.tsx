@@ -75,7 +75,7 @@ export const EventProvider = ({ children }: EventProviderProps) => {
       contacts: {
         phone: "98985307788",
         email: "vivaaprenderma@gmail.com",
-        whatsapp: "",
+        whatsapp: "98985307788",
       },
       socials: {
         instagram: "",
