@@ -85,10 +85,10 @@ export const EventProvider = ({ children }: EventProviderProps) => {
       },
       tickets: {
         valueDefault: 899.9,
-        valueAll: 699.99,
-        valueHalf: 349.99,
+        valueAll: 797.0,
+        valueHalf: 398.5,
         valuePremium: 599.99,
-        group: 349.99,
+        group: 398.5,
         linkTicketAll:
           "https://www.sympla.com.br/evento/movemente/3337756?share_id=whatsapp",
         linkTicketHalf:
