@@ -39,7 +39,7 @@ const mockTestimonials: Testimonial[] = [
     role: "Mãe do João (6 anos)",
     photo: "https://i.pravatar.cc/300?img=1",
     content:
-      "O Movimente mudou completamente nossa perspectiva sobre o autismo. As palestras sobre intervenção precoce foram fundamentais para o desenvolvimento do meu filho. Saímos de lá com um plano de ação concreto e muito mais esperança.",
+      "O Movemente mudou completamente nossa perspectiva sobre o autismo. As palestras sobre intervenção precoce foram fundamentais para o desenvolvimento do meu filho. Saímos de lá com um plano de ação concreto e muito mais esperança.",
     rating: 5,
     date: "15 de março, 2024",
     verified: true,
@@ -82,7 +82,7 @@ const mockTestimonials: Testimonial[] = [
     role: "Psicóloga - ABA",
     photo: "https://i.pravatar.cc/300?img=4",
     content:
-      "A abordagem multidisciplinar do Movimente é seu maior diferencial. Consegui atualizar meus conhecimentos em ABA, ao mesmo tempo que troquei experiências com outros profissionais.",
+      "A abordagem multidisciplinar do Movemente é seu maior diferencial. Consegui atualizar meus conhecimentos em ABA, ao mesmo tempo que troquei experiências com outros profissionais.",
     rating: 5,
     date: "5 de março, 2024",
     verified: true,
@@ -122,7 +122,7 @@ const mockTestimonials: Testimonial[] = [
 
 export default function TestimonialsSection({
   title = "O que estão falando do",
-  subtitle = "Depoimentos de famílias e profissionais que já participaram do Movimente",
+  subtitle = "Depoimentos de famílias e profissionais que já participaram do Movemente",
   testimonials = mockTestimonials,
 }: TestimonialsSectionProps) {
   // ✅ FIX: instância direta — sem módulo Navigation para evitar o bug de pular slides
@@ -141,7 +141,7 @@ export default function TestimonialsSection({
             Depoimentos
           </span>
           <h2 className={styles.title}>
-            {title} <span className={styles.titleHighlight}>Movimente</span>
+            {title} <span className={styles.titleHighlight}>Movemente</span>
           </h2>
           <p className={styles.subtitle}>{subtitle}</p>
         </div>
