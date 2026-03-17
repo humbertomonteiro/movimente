@@ -47,7 +47,7 @@ export default function Location() {
           </span>
           <h2 className={styles.title}>
             Onde vai acontecer o{" "}
-            <span className={styles.titleHighlight}>Movimente</span>
+            <span className={styles.titleHighlight}>Movemente</span>
           </h2>
           <p className={styles.subtitle}>
             Um local pensado para proporcionar conforto, acessibilidade e uma
