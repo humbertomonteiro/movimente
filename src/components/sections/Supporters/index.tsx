@@ -12,7 +12,7 @@ export default function Supporters() {
   return (
     <section className={styles.section}>
       <div className={styles.container}>
-        <h2 className={styles.title}>Quem faz o Movimente acontecer</h2>
+        <h2 className={styles.title}>Quem faz o Movemente acontecer</h2>
 
         {/* Patrocinador */}
         <div className={styles.patrocinador}>

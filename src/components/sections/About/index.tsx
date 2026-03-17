@@ -112,7 +112,7 @@ export default function About() {
               São Luís - Maranhão
             </span>
             <h2 className={styles.title}>
-              Sobre o <span className={styles.titleHighlight}>Movimente</span>
+              Sobre o <span className={styles.titleHighlight}>Movemente</span>
             </h2>
 
             {/* Texto inicial - sempre visível */}
