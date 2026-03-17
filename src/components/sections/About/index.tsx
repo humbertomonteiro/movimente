@@ -7,13 +7,13 @@ import { TbTargetArrow } from "react-icons/tb";
 
 // import aboutImage from "../../../assets/imgs/shared/event.jpg";
 
-import { useEvent } from "../../../contexts/EventContexts";
+// import { useEvent } from "../../../contexts/EventContexts";
 
 export default function About() {
-  const { events } = useEvent();
+  // const { events } = useEvent();
   const [showFullText, setShowFullText] = useState(false);
 
-  const event = events.filter((e) => e.id === "movemente2026")[0];
+  // const event = events.filter((e) => e.id === "movemente2026")[0];
 
   const toggleText = () => {
     setShowFullText(!showFullText);
