@@ -1,10 +1,11 @@
 import { useState } from "react";
 import styles from "./About.module.css";
 import ButtonCTA from "../../shared/ButtonCTA";
-import { FaCalendar, FaLocationArrow, FaHeart } from "react-icons/fa";
+// import { FaCalendar, FaLocationArrow, FaHeart } from "react-icons/fa";
+import { FaHeart } from "react-icons/fa";
 import { TbTargetArrow } from "react-icons/tb";
 
-import aboutImage from "../../../assets/imgs/shared/event.jpg";
+// import aboutImage from "../../../assets/imgs/shared/event.jpg";
 
 import { useEvent } from "../../../contexts/EventContexts";
 
@@ -29,15 +30,22 @@ export default function About() {
         {/* Coluna da Esquerda - Imagem */}
         <div className={styles.imageColumn} data-aos="zoom-in">
           <div className={styles.imageWrapper}>
-            <img
+            <iframe
+              // width="560"
+              // height="315"
+              src="https://www.youtube.com/embed/Y6AkHPZHWdM?si=5Dy7KBpqsrXE_g4X"
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            ></iframe>
+            {/* <img
               src={aboutImage}
               alt="Pessoas com autismo em atividades inclusivas no Maranhão"
               className={styles.image}
               loading="lazy"
-            />
+            /> */}
 
             {/* Card flutuante com info do evento */}
-            <div
+            {/* <div
               className={styles.floatingCard}
               data-aos="zoom-in"
               data-aos-delay="300"
@@ -56,7 +64,7 @@ export default function About() {
                   <span>São Luís - MA</span>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
 
           {/* Cards de diferenciais */}
