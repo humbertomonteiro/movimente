@@ -119,8 +119,7 @@
   background: white;
   border-radius: 24px;
   overflow: hidden;
-  box-shadow:
-    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
     0 2px 4px -2px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
   height: 100%;
@@ -130,8 +129,7 @@
 
 .cardInner:hover {
   transform: translateY(-8px);
-  box-shadow:
-    0 20px 25px -5px rgba(0, 0, 0, 0.1),
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
     0 8px 10px -6px rgba(0, 0, 0, 0.1);
 }
 
@@ -470,9 +468,7 @@
   justify-content: center;
   font-size: 1.2rem;
   cursor: pointer;
-  transition:
-    background 0.2s ease,
-    transform 0.2s ease;
+  transition: background 0.2s ease, transform 0.2s ease;
   flex-shrink: 0;
 }
 
@@ -525,5 +521,48 @@
 
   .modalContent {
     border-radius: 16px;
+  }
+}
+
+/* ── Video hint badge ── */
+.videoHint {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  margin: 14px auto 0 auto;
+  gap: 7px;
+  padding: 8px 16px;
+  border-radius: 40px;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366);
+  color: white;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  box-shadow: 0 4px 14px rgba(220, 39, 67, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  animation: pulseHint 2.4s ease-in-out infinite;
+}
+
+.videoHint:hover {
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 8px 22px rgba(220, 39, 67, 0.45);
+  animation: none;
+}
+
+.videoHintIcon {
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
+@keyframes pulseHint {
+  0%,
+  100% {
+    box-shadow: 0 4px 14px rgba(220, 39, 67, 0.35);
+  }
+  50% {
+    box-shadow: 0 4px 22px rgba(220, 39, 67, 0.6);
   }
 }

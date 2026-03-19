@@ -79,8 +79,9 @@ export default function About() {
               </div>
               <h3 className={styles.featureTitle}>Propósito</h3>
               <p className={styles.featureText}>
-                Transformar a realidade das pessoas com autismo no Maranhão
-                através da informação e acolhimento
+                Despertar consciências, transformar realidades e ampliar o olhar
+                da sociedade sobre o desenvolvimento humano através da
+                informação, do acolhimento e do movimento.
               </p>
             </div>
 
@@ -94,8 +95,8 @@ export default function About() {
               </div>
               <h3 className={styles.featureTitle}>Comunidade</h3>
               <p className={styles.featureText}>
-                Fortalecer a rede de apoio entre famílias, profissionais e
-                instituições maranhenses
+                Unir vozes, conectar histórias e fortalecer uma rede de apoio
+                que transforma realidades e move o Brasil.
               </p>
             </div>
           </div>

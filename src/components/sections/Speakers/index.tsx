@@ -244,7 +244,9 @@ export default function Speakers() {
                   <div className={styles.avatarSection}>
                     <div className={styles.avatarContainer}>
                       <button
-                        className={`${styles.avatarButton} ${speaker.videoUrl ? styles.hasVideo : ""}`}
+                        className={`${styles.avatarButton} ${
+                          speaker.videoUrl ? styles.hasVideo : ""
+                        }`}
                         onClick={() => openVideoModal(speaker)}
                         aria-label={`Ver vídeo de ${speaker.name}`}
                         disabled={!speaker.videoUrl}
@@ -270,6 +272,18 @@ export default function Speakers() {
                     </div>
                   </div>
 
+                  {/* Indicador de vídeo */}
+                  {speaker.videoUrl && (
+                    <button
+                      className={styles.videoHint}
+                      onClick={() => openVideoModal(speaker)}
+                      aria-label={`Ver recado de ${speaker.name}`}
+                    >
+                      <IoPlay className={styles.videoHintIcon} />
+                      <span>Ver recado em vídeo</span>
+                    </button>
+                  )}
+
                   {/* Conteúdo */}
                   <div className={styles.content}>
                     <h3 className={styles.name}>{speaker.name}</h3>
@@ -289,20 +303,19 @@ export default function Speakers() {
                   {speaker.social &&
                     Object.values(speaker.social).some(Boolean) && (
                       <div className={styles.socialFooter}>
-                        {Object.entries(speaker.social).map(
-                          ([platform, url]) =>
-                            url ? (
-                              <a
-                                key={platform}
-                                href={url}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className={styles.socialLink}
-                                aria-label={`${platform} de ${speaker.name}`}
-                              >
-                                {getSocialIcon(platform)}
-                              </a>
-                            ) : null,
+                        {Object.entries(speaker.social).map(([platform, url]) =>
+                          url ? (
+                            <a
+                              key={platform}
+                              href={url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className={styles.socialLink}
+                              aria-label={`${platform} de ${speaker.name}`}
+                            >
+                              {getSocialIcon(platform)}
+                            </a>
+                          ) : null
                         )}
                       </div>
                     )}
