@@ -11,6 +11,7 @@ export interface EventData {
   address: string;
   linkWaze: string;
   linkLocation: string;
+  linkWhatsAppSale: string;
   image: string;
   mapGoogle: React.ReactNode;
   contacts: {
@@ -66,6 +67,7 @@ export const EventProvider = ({ children }: EventProviderProps) => {
       linkLocation: "https://maps.app.goo.gl/ChkRkoqeNb4mXJD88",
       linkWaze:
         "https://www.waze.com/en/live-map/directions/br/ma/sebrae-multicenter?navigate=yes&place=ChIJnXHEi92N9gcRZVaK2qqgZ7k",
+      linkWhatsAppSale: "https://wa.me/5598985307788?text=quero%20participar",
       image:
         "https://ma.agenciasebrae.com.br/wp-content/uploads/sites/10/2024/05/02_p8817_cover_image_resized.jpg",
       mapGoogle: (
@@ -88,9 +90,9 @@ export const EventProvider = ({ children }: EventProviderProps) => {
       tickets: {
         valueDefault: 899.9,
         valueAll: 797.0,
-        valueHalf: 398.5,
+        valueHalf: 398.4,
         valuePremium: 599.99,
-        valueSocial: 415.0,
+        valueSocial: 418.4,
         group: 398.5,
         linkTicketAll:
           "https://www.sympla.com.br/evento/movemente/3337756?share_id=whatsapp",
