@@ -92,7 +92,7 @@ export const EventProvider = ({ children }: EventProviderProps) => {
       },
       tickets: {
         valueDefault: 899.9,
-        valueMovemente: 395.5,
+        valueMovemente: 398.5,
         valueConexao: 897,
         valueVip: 1694,
         valueAll: 797.0,

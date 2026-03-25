@@ -17,7 +17,7 @@ export default function Tickets() {
       id: "movemente",
       name: "MOVEMENTE",
       fullPrice: 797,
-      installmentPrice: event.tickets.valueAll,
+      installmentPrice: event.tickets.valueMovemente,
       icon: <FaTicketAlt className={styles.ticketIcon} />,
       socialNote:
         "Para quem quer participar e absorver o conteúdo do congresso.",
