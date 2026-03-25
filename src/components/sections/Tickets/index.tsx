@@ -121,7 +121,8 @@ export default function Tickets() {
                 {/* Banner de promoção — apenas para o ticket com promoPrice */}
                 {ticket.promoPrice && (
                   <div className={styles.promoBanner}>
-                    🔥 Oferta para os primeiros 100 ingressos
+                    Oferta para os primeiros 100 ingressos Ingresso Social: R$
+                    398,50 + 1kg de Alimento
                   </div>
                 )}
 
@@ -136,13 +137,14 @@ export default function Tickets() {
                   {ticket.promoPrice ? (
                     <>
                       {/* Preço original riscado */}
-                      <div className={styles.fullPriceAll}>
-                        De{" "}
+                      {/* <div className={styles.fullPriceAll}>
+                      De{" "}
                         <span className={styles.fullPrice}>
                           R$ {formatPrice(ticket.fullPrice)}
                         </span>{" "}
                         por
-                      </div>
+                      Ingresso social: R$ 398,50 e 1kg de alimento
+                      </div> */}
 
                       {/* Parcelas da promoção em destaque */}
                       <div className={styles.installmentHighlight}>
