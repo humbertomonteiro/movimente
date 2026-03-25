@@ -27,6 +27,9 @@ export interface EventData {
   };
   tickets: {
     valueDefault: number;
+    valueMovemente: number;
+    valueConexao: number;
+    valueVip: number;
     valueAll: number;
     valueHalf: number;
     valuePremium: number;
@@ -89,6 +92,9 @@ export const EventProvider = ({ children }: EventProviderProps) => {
       },
       tickets: {
         valueDefault: 899.9,
+        valueMovemente: 395.5,
+        valueConexao: 897,
+        valueVip: 1694,
         valueAll: 797.0,
         valueHalf: 398.4,
         valuePremium: 599.99,

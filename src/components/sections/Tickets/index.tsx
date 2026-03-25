@@ -1,5 +1,7 @@
 import styles from "./Tickets.module.css";
-import { FaCheck, FaTicketAlt, FaPeopleCarry, FaUserAlt } from "react-icons/fa";
+import { FaCheck, FaTicketAlt } from "react-icons/fa";
+import { FaWebAwesome } from "react-icons/fa6";
+import { IoPeople } from "react-icons/io5";
 import ButtonCTA from "../../shared/ButtonCTA";
 import GridOverlay from "../../shared/GridOverlay";
 
@@ -12,21 +14,20 @@ export default function Tickets() {
 
   const tickets = [
     {
-      id: "inteiro",
-      name: "INGRESSO INTEIRO",
-      fullPrice: event.tickets.valueDefault,
+      id: "movemente",
+      name: "MOVEMENTE",
+      fullPrice: 797,
       installmentPrice: event.tickets.valueAll,
       icon: <FaTicketAlt className={styles.ticketIcon} />,
-      socialNote: null as string | null,
+      socialNote:
+        "Para quem quer participar e absorver o conteúdo do congresso.",
       features: [
-        "Acesso aos dois dias do congresso, com uma programação imperdível;",
-        "Palestras baseadas em evidências, com palestrantes renomados;",
-        "Kit do congressista exclusivo, entregue no credenciamento, com materiais e brindes;",
-        "Certificado de participação digital, enviado para o e-mail do participante;",
-        "Intérprete de Libras;",
-        "Área de expositores e patrocinadores, com estandes e produtos inovadores;",
-        "Networking e conexões reais com profissionais e famílias de todo o Brasil;",
-        "Tudo isso acontecerá no Multicenter SEBRAE, em São Luís do Maranhão, um dos mais importantes complexos de eventos do estado, referência na realização de congressos, feiras e grandes encontros institucionais.",
+        "Acesso aos 2 dias de evento",
+        "Participação em todas as palestras da programação",
+        "Certificado digital enviado por e-mail",
+        "Acesso à área de expositores",
+        "Kit Congressista",
+        "Lugar na plenária Movemente",
       ],
       // link: event.tickets.linkTicketAll,
       link: event.linkWhatsAppSale,
@@ -34,21 +35,21 @@ export default function Tickets() {
       disabled: false,
     },
     {
-      id: "social",
-      name: "INGRESSO   SOCIAL",
-      fullPrice: event.tickets.valueDefault,
-      installmentPrice: event.tickets.valueSocial,
-      icon: <FaPeopleCarry className={styles.ticketIcon} />,
-      socialNote: "🌾 Na entrada, traga 1kg de alimento não perecível.",
+      id: "conexao",
+      name: "CONEXÃO",
+      fullPrice: 1200,
+      installmentPrice: event.tickets.valueConexao,
+      icon: <IoPeople className={styles.ticketIcon} />,
+      socialNote:
+        "Para quem quer levar a experiência do congresso também no físico.",
       features: [
-        "Acesso aos dois dias do congresso, com uma programação imperdível;",
-        "Palestras baseadas em evidências, com palestrantes renomados;",
-        "Kit do congressista exclusivo, entregue no credenciamento, com materiais e brindes;",
-        "Certificado de participação digital, enviado para o e-mail do participante;",
-        "Intérprete de Libras;",
-        "Área de expositores e patrocinadores, com estandes e produtos inovadores;",
-        "Networking e conexões reais com profissionais e famílias de todo o Brasil;",
-        "Tudo isso acontecerá no Multicenter SEBRAE, em São Luís do Maranhão, um dos mais importantes complexos de eventos do estado, referência na realização de congressos, feiras e grandes encontros institucionais.",
+        "Acesso aos 2 dias de evento",
+        "Participação em todas as palestras da programação",
+        "Certificado digital enviado por e-mail",
+        "Acesso à área de expositores",
+        "Kit do congressista exclusivo",
+        "Acesso à área de expositores",
+        "Lugar na plenária Conexão",
       ],
       // link: event.tickets.linkTicketSocial,
       link: event.linkWhatsAppSale,
@@ -56,21 +57,24 @@ export default function Tickets() {
       disabled: false,
     },
     {
-      id: "meia",
-      name: "MEIA-ENTRADA",
-      fullPrice: event.tickets.valueDefault / 2,
-      installmentPrice: event.tickets.valueHalf,
-      icon: <FaUserAlt className={styles.ticketIcon} />,
-      socialNote: null as string | null,
+      id: "vip",
+      name: "VIP",
+      fullPrice: 2500,
+      installmentPrice: event.tickets.valueVip,
+      icon: <FaWebAwesome className={styles.ticketIcon} />,
+      socialNote:
+        "Para quem quer viver o congresso com mais acesso e proximidade.",
       features: [
-        "Acesso aos dois dias do congresso, com uma programação imperdível;",
-        "Palestras baseadas em evidências, com palestrantes renomados;",
-        "Kit do congressista exclusivo, entregue no credenciamento, com materiais e brindes;",
-        "Certificado de participação digital, enviado para o e-mail do participante;",
-        "Intérprete de Libras;",
-        "Área de expositores e patrocinadores, com estandes e produtos inovadores;",
-        "Networking e conexões reais com profissionais e famílias de todo o Brasil;",
-        "Tudo isso acontecerá no Multicenter SEBRAE, em São Luís do Maranhão, um dos mais importantes complexos de eventos do estado, referência na realização de congressos, feiras e grandes encontros institucionais.",
+        "Acesso aos 2 dias de evento",
+        "Participação em todas as palestras da programação",
+        "Certificado digital enviado por e-mail",
+        "Acesso à área de expositores",
+        "Kit do congressista exclusivo VIP",
+        "Acesso à área de expositores",
+        "Networking qualificado com profissionais e convidados",
+        "Experiência diferenciada durante o evento",
+        "Acesso ao lounge VIP (Facilidade para tirar foto com os palestrantes)",
+        "Lugar na plenária Vip",
       ],
       // link: event.tickets.linkTicketHalf,
       link: event.linkWhatsAppSale,
@@ -86,11 +90,11 @@ export default function Tickets() {
     });
   };
 
-  const getDiscountPercent = (fullPrice: number, salePrice: number) => {
-    if (fullPrice <= salePrice) return null;
-    const percent = Math.round(((fullPrice - salePrice) / fullPrice) * 100);
-    return percent > 0 ? percent : null;
-  };
+  // const getDiscountPercent = (fullPrice: number, salePrice: number) => {
+  //   if (fullPrice <= salePrice) return null;
+  //   const percent = Math.round(((fullPrice - salePrice) / fullPrice) * 100);
+  //   return percent > 0 ? percent : null;
+  // };
 
   return (
     <section className={styles.section} id="tickets">
@@ -110,10 +114,10 @@ export default function Tickets() {
         <div className={styles.grid}>
           {tickets.map((ticket, index) => {
             const installmentValue = ticket.installmentPrice / 12;
-            const discountPercent = getDiscountPercent(
-              ticket.fullPrice,
-              ticket.installmentPrice
-            );
+            // const discountPercent = getDiscountPercent(
+            //   ticket.fullPrice,
+            //   ticket.installmentPrice
+            // );
 
             return (
               <div
@@ -123,11 +127,11 @@ export default function Tickets() {
                 data-aos-delay={index * 100}
               >
                 {/* Badge de desconto */}
-                {discountPercent && (
+                {/* {discountPercent && (
                   <span className={styles.discountBadge}>
                     -{discountPercent}% OFF
                   </span>
-                )}
+                )} */}
 
                 {/* Header */}
                 <div className={styles.cardHeader}>
@@ -137,9 +141,13 @@ export default function Tickets() {
 
                 {/* Preço com parcela em destaque */}
                 <div className={styles.priceBox}>
-                  <span className={styles.fullPrice}>
-                    De R$ {formatPrice(ticket.fullPrice)}
-                  </span>
+                  <div className={styles.fullPriceAll}>
+                    De{" "}
+                    <span className={styles.fullPrice}>
+                      R$ {formatPrice(ticket.fullPrice)}
+                    </span>{" "}
+                    por
+                  </div>
 
                   <div className={styles.installmentHighlight}>
                     <span className={styles.installmentValue}>
@@ -176,6 +184,12 @@ export default function Tickets() {
                     data-color="primary"
                     disabled={ticket.disabled}
                   />
+                  <a
+                    className={styles.linkTicktHalfPrice}
+                    href={event.tickets.linkTicketHalf}
+                  >
+                    Adquirir Ingresso Meia
+                  </a>
                 </div>
               </div>
             );

@@ -12,6 +12,7 @@ import Testimonials from "../../components/sections/Testimonials";
 import AnimationCirclesBg from "../../components/shared/AnimationCirclesBg";
 import Supporters from "../../components/sections/Supporters";
 import FounderStory from "../../components/sections/FounderStory";
+import VenueSeats from "../../components/sections/VenueSeats";
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
       <TargetAudience />
       <Speakers />
       <About />
+      <VenueSeats />
       <Tickets />
       <FounderStory />
       <Testimonials />
