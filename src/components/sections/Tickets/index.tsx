@@ -119,12 +119,6 @@ export default function Tickets() {
                 data-aos-delay={index * 100}
               >
                 {/* Banner de promoção — apenas para o ticket com promoPrice */}
-                {ticket.promoPrice && (
-                  <div className={styles.promoBanner}>
-                    Oferta para os primeiros 100 ingressos Ingresso Social: R$
-                    398,50 + 1kg de Alimento
-                  </div>
-                )}
 
                 {/* Header */}
                 <div className={styles.cardHeader}>
@@ -165,6 +159,13 @@ export default function Tickets() {
                         Após os 100 primeiros: 12x de R${" "}
                         {formatPrice(installmentValue)}
                       </span>
+
+                      {ticket.promoPrice && (
+                        <div className={styles.promoBanner}>
+                          Oferta para os primeiros 100 ingressos Ingresso
+                          Social: R$ 398,50 + 1kg de Alimento
+                        </div>
+                      )}
                     </>
                   ) : (
                     <>

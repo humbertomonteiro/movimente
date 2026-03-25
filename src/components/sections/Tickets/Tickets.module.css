@@ -406,10 +406,10 @@
   font-size: 0.8rem;
   font-weight: 700;
   text-align: center;
-  padding: 6px 12px;
-  border-radius: 1rem;
+  padding: 12px;
+  border-radius: 0.8rem;
   letter-spacing: 0.3px;
-  margin-bottom: 1rem;
+  margin-top: 1rem;
 }
 
 .afterPromoNote {
