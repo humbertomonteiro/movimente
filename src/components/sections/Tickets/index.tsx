@@ -16,8 +16,10 @@ export default function Tickets() {
     {
       id: "movemente",
       name: "MOVEMENTE",
-      fullPrice: 797,
+      fullPrice: 997,
       installmentPrice: event.tickets.valueMovemente,
+      promoPrice: 398.5, // ← promoção primeiros 100 ingressos
+      promoInstallments: 12, // ← parcelas da promo
       icon: <FaTicketAlt className={styles.ticketIcon} />,
       socialNote:
         "Para quem quer participar e absorver o conteúdo do congresso.",
@@ -29,8 +31,7 @@ export default function Tickets() {
         "Kit Congressista",
         "Lugar na plenária Movemente",
       ],
-      // link: event.tickets.linkTicketAll,
-      link: event.linkWhatsAppSale,
+      link: "https://checkout2.bilheteriadigital.com/movemente-19-de-setembro",
       buttonText: "GARANTIR AGORA",
       disabled: false,
     },
@@ -47,18 +48,17 @@ export default function Tickets() {
         "Participação em todas as palestras da programação",
         "Certificado digital enviado por e-mail",
         "Acesso à área de expositores",
-        "Kit do congressista exclusivo",
+        "Kit congressista",
         "Acesso à área de expositores",
         "Lugar na plenária Conexão",
       ],
-      // link: event.tickets.linkTicketSocial,
-      link: event.linkWhatsAppSale,
+      link: "https://checkout2.bilheteriadigital.com/movemente-19-de-setembro",
       buttonText: "GARANTIR AGORA",
       disabled: false,
     },
     {
       id: "vip",
-      name: "VIP",
+      name: "PROTAGONISMO",
       fullPrice: 2500,
       installmentPrice: event.tickets.valueVip,
       icon: <FaWebAwesome className={styles.ticketIcon} />,
@@ -69,32 +69,25 @@ export default function Tickets() {
         "Participação em todas as palestras da programação",
         "Certificado digital enviado por e-mail",
         "Acesso à área de expositores",
-        "Kit do congressista exclusivo VIP",
+        "Kit do congressista exclusivo",
         "Acesso à área de expositores",
         "Networking qualificado com profissionais e convidados",
         "Experiência diferenciada durante o evento",
         "Acesso ao lounge VIP (Facilidade para tirar foto com os palestrantes)",
         "Lugar na plenária Vip",
       ],
-      // link: event.tickets.linkTicketHalf,
-      link: event.linkWhatsAppSale,
+      link: "https://checkout2.bilheteriadigital.com/movemente-19-de-setembro",
       buttonText: "GARANTIR AGORA",
       disabled: false,
     },
   ];
 
-  const formatPrice = (price: number) => {
+  const formatPrice = (price: any) => {
     return price.toLocaleString("pt-BR", {
       minimumFractionDigits: 2,
       maximumFractionDigits: 2,
     });
   };
-
-  // const getDiscountPercent = (fullPrice: number, salePrice: number) => {
-  //   if (fullPrice <= salePrice) return null;
-  //   const percent = Math.round(((fullPrice - salePrice) / fullPrice) * 100);
-  //   return percent > 0 ? percent : null;
-  // };
 
   return (
     <section className={styles.section} id="tickets">
@@ -114,10 +107,9 @@ export default function Tickets() {
         <div className={styles.grid}>
           {tickets.map((ticket, index) => {
             const installmentValue = ticket.installmentPrice / 12;
-            // const discountPercent = getDiscountPercent(
-            //   ticket.fullPrice,
-            //   ticket.installmentPrice
-            // );
+            const promoInstallmentValue = ticket.promoPrice
+              ? ticket.promoPrice / ticket.promoInstallments
+              : null;
 
             return (
               <div
@@ -126,12 +118,12 @@ export default function Tickets() {
                 data-aos="zoom-in"
                 data-aos-delay={index * 100}
               >
-                {/* Badge de desconto */}
-                {/* {discountPercent && (
-                  <span className={styles.discountBadge}>
-                    -{discountPercent}% OFF
-                  </span>
-                )} */}
+                {/* Banner de promoção — apenas para o ticket com promoPrice */}
+                {ticket.promoPrice && (
+                  <div className={styles.promoBanner}>
+                    🔥 Oferta para os primeiros 100 ingressos
+                  </div>
+                )}
 
                 {/* Header */}
                 <div className={styles.cardHeader}>
@@ -139,29 +131,64 @@ export default function Tickets() {
                   <h3 className={styles.cardName}>{ticket.name}</h3>
                 </div>
 
-                {/* Preço com parcela em destaque */}
+                {/* Preço */}
                 <div className={styles.priceBox}>
-                  <div className={styles.fullPriceAll}>
-                    De{" "}
-                    <span className={styles.fullPrice}>
-                      R$ {formatPrice(ticket.fullPrice)}
-                    </span>{" "}
-                    por
-                  </div>
+                  {ticket.promoPrice ? (
+                    <>
+                      {/* Preço original riscado */}
+                      <div className={styles.fullPriceAll}>
+                        De{" "}
+                        <span className={styles.fullPrice}>
+                          R$ {formatPrice(ticket.fullPrice)}
+                        </span>{" "}
+                        por
+                      </div>
 
-                  <div className={styles.installmentHighlight}>
-                    <span className={styles.installmentValue}>
-                      <span className={styles.numberInstallments}>12x</span> R${" "}
-                      {formatPrice(installmentValue)}
-                    </span>
-                  </div>
+                      {/* Parcelas da promoção em destaque */}
+                      <div className={styles.installmentHighlight}>
+                        <span className={styles.installmentValue}>
+                          <span className={styles.numberInstallments}>
+                            {ticket.promoInstallments}x
+                          </span>{" "}
+                          R$ {formatPrice(promoInstallmentValue)}
+                        </span>
+                      </div>
 
-                  <span className={styles.totalPrice}>
-                    ou R$ {formatPrice(ticket.installmentPrice)} à vista
-                  </span>
+                      <span className={styles.totalPrice}>
+                        ou R$ {formatPrice(ticket.promoPrice)} à vista
+                      </span>
+
+                      {/* Preço normal após promo */}
+                      <span className={styles.afterPromoNote}>
+                        Após os 100 primeiros: 12x de R${" "}
+                        {formatPrice(installmentValue)}
+                      </span>
+                    </>
+                  ) : (
+                    <>
+                      <div className={styles.fullPriceAll}>
+                        De{" "}
+                        <span className={styles.fullPrice}>
+                          R$ {formatPrice(ticket.fullPrice)}
+                        </span>{" "}
+                        por
+                      </div>
+
+                      <div className={styles.installmentHighlight}>
+                        <span className={styles.installmentValue}>
+                          <span className={styles.numberInstallments}>12x</span>{" "}
+                          R$ {formatPrice(installmentValue)}
+                        </span>
+                      </div>
+
+                      <span className={styles.totalPrice}>
+                        ou R$ {formatPrice(ticket.installmentPrice)} à vista
+                      </span>
+                    </>
+                  )}
                 </div>
 
-                {/* Nota social (alimento) */}
+                {/* Nota social */}
                 {ticket.socialNote && (
                   <div className={styles.donationNote}>{ticket.socialNote}</div>
                 )}
@@ -176,9 +203,10 @@ export default function Tickets() {
                   ))}
                 </ul>
 
-                {/* Botão sempre visível */}
+                {/* Botão */}
                 <div className={styles.buttonWrapper}>
                   <ButtonCTA
+                    target="_blank"
                     link={ticket.link}
                     text={ticket.buttonText}
                     data-color="primary"
@@ -186,7 +214,8 @@ export default function Tickets() {
                   />
                   <a
                     className={styles.linkTicktHalfPrice}
-                    href={event.tickets.linkTicketHalf}
+                    target="_blank"
+                    href="https://checkout2.bilheteriadigital.com/movemente-19-de-setembro"
                   >
                     Adquirir Ingresso Meia
                   </a>

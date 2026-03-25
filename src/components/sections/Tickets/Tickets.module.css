@@ -397,3 +397,24 @@
     transform: none;
   }
 }
+
+/* Cole esses dois blocos no final do seu Tickets.module.css */
+
+.promoBanner {
+  background: linear-gradient(90deg, #f59e0b, #ef4444);
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-align: center;
+  padding: 6px 12px;
+  border-radius: 1rem;
+  letter-spacing: 0.3px;
+  margin-bottom: 1rem;
+}
+
+.afterPromoNote {
+  display: block;
+  font-size: 0.78rem;
+  color: #94a3b8;
+  margin-top: 6px;
+}
