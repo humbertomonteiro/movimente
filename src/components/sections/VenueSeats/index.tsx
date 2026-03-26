@@ -104,7 +104,7 @@ export default function VenueSeats() {
                 <FaWebAwesome />
               </div>
               <div>
-                <h3 className={styles.seatTitle}>Ingresso Protagonismo</h3>
+                <h3 className={styles.seatTitle}>Ingresso VIP</h3>
                 <p className={styles.seatText}>
                   Para quem quer viver o congresso com mais acesso e
                   proximidade.

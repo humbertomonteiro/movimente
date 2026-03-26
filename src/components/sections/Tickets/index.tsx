@@ -58,7 +58,7 @@ export default function Tickets() {
     },
     {
       id: "vip",
-      name: "PROTAGONISMO",
+      name: "VIP",
       fullPrice: 2500,
       installmentPrice: event.tickets.valueVip,
       icon: <FaWebAwesome className={styles.ticketIcon} />,
@@ -169,13 +169,13 @@ export default function Tickets() {
                     </>
                   ) : (
                     <>
-                      <div className={styles.fullPriceAll}>
+                      {/* <div className={styles.fullPriceAll}>
                         De{" "}
                         <span className={styles.fullPrice}>
                           R$ {formatPrice(ticket.fullPrice)}
                         </span>{" "}
                         por
-                      </div>
+                      </div> */}
 
                       <div className={styles.installmentHighlight}>
                         <span className={styles.installmentValue}>
