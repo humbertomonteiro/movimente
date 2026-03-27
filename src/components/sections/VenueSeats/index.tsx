@@ -1,6 +1,6 @@
 import styles from "./VenueSeats.module.css";
 import ButtonCTA from "../../shared/ButtonCTA";
-import seatsImage from "../../../assets/imgs/shared/seats.jpg";
+import seatsImage from "../../../assets/imgs/shared/seats.png";
 import { FaTicketAlt } from "react-icons/fa";
 import { IoPeople } from "react-icons/io5";
 import { FaWebAwesome } from "react-icons/fa6";
