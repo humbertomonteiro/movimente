@@ -131,14 +131,14 @@ export default function Tickets() {
                   {ticket.promoPrice ? (
                     <>
                       {/* Preço original riscado */}
-                      {/* <div className={styles.fullPriceAll}>
-                      De{" "}
+                      <div className={styles.fullPriceAll}>
+                        De{" "}
                         <span className={styles.fullPrice}>
                           R$ {formatPrice(ticket.fullPrice)}
                         </span>{" "}
                         por
-                      Ingresso social: R$ 398,50 e 1kg de alimento
-                      </div> */}
+                        {/* Ingresso social: R$ 398,50 e 1kg de alimento */}
+                      </div>
 
                       {/* Parcelas da promoção em destaque */}
                       <div className={styles.installmentHighlight}>
