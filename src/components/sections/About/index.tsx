@@ -228,7 +228,22 @@ export default function About() {
 
           {/* CTA */}
           <div className={styles.ctaContainer}>
-            <ButtonCTA link="#tickets" text="Quero participar do Movimente" />
+            <ButtonCTA
+              link="#tickets"
+              text="Quero participar do Movimente"
+              onClick={(e) => {
+                e.preventDefault();
+
+                window.fbq?.("track", "ViewContent", {
+                  content_name: "scroll_to_tickets",
+                });
+
+                setTimeout(() => {
+                  const el = document.getElementById("tickets");
+                  el?.scrollIntoView({ behavior: "smooth" });
+                }, 150);
+              }}
+            />
           </div>
         </div>
       </div>

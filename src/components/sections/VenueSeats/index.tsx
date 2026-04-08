@@ -22,17 +22,6 @@ export default function VenueSeats() {
               className={styles.image}
               loading="lazy"
             />
-            {/* Badge sobre a imagem */}
-            {/* <div className={styles.imageBadge}>
-              <svg
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                className={styles.badgeIcon}
-              >
-                <path d="M10 2a6 6 0 00-6 6c0 4.5 6 10 6 10s6-5.5 6-10a6 6 0 00-6-6zm0 8a2 2 0 110-4 2 2 0 010 4z" />
-              </svg>
-              Local do Evento */}
-            {/* </div> */}
           </div>
         </div>
 
@@ -114,7 +103,22 @@ export default function VenueSeats() {
           </div>
 
           <div className={styles.ctaContainer}>
-            <ButtonCTA link="#tickets" text="Escolher meu ingresso" />
+            <ButtonCTA
+              link="#tickets"
+              text="Escolher meu ingresso"
+              onClick={(e) => {
+                e.preventDefault();
+
+                window.fbq?.("track", "ViewContent", {
+                  content_name: "scroll_to_tickets",
+                });
+
+                setTimeout(() => {
+                  const el = document.getElementById("tickets");
+                  el?.scrollIntoView({ behavior: "smooth" });
+                }, 150);
+              }}
+            />
           </div>
         </div>
       </div>

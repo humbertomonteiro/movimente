@@ -327,7 +327,22 @@ export default function Speakers() {
 
         {/* CTA */}
         <div className={styles.ctaContainer} data-aos="fade-up">
-          <ButtonCTA link="#tickets" text="Garantir Vaga" />
+          <ButtonCTA
+            link="#tickets"
+            text="Garantir Vaga"
+            onClick={(e) => {
+              e.preventDefault();
+
+              window.fbq?.("track", "ViewContent", {
+                content_name: "scroll_to_tickets",
+              });
+
+              setTimeout(() => {
+                const el = document.getElementById("tickets");
+                el?.scrollIntoView({ behavior: "smooth" });
+              }, 150);
+            }}
+          />
         </div>
       </div>
 

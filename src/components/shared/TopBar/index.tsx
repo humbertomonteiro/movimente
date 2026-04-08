@@ -6,7 +6,23 @@ export default function TopoBar() {
       {/* <span>Contagem regressiva para pré-venda</span> */}
       <span>GARANTA AGORA MESMO SEU INGRESSO.</span>
 
-      <a href="#tickets">Aproveitar agora</a>
+      <a
+        href="#tickets"
+        onClick={(e) => {
+          e.preventDefault();
+
+          window.fbq?.("track", "ViewContent", {
+            content_name: "scroll_to_tickets",
+          });
+
+          setTimeout(() => {
+            const el = document.getElementById("tickets");
+            el?.scrollIntoView({ behavior: "smooth" });
+          }, 150);
+        }}
+      >
+        Aproveitar agora
+      </a>
     </div>
   );
 }

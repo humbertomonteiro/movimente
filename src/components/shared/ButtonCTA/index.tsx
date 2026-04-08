@@ -9,7 +9,9 @@ interface ButtonCTAProps {
   loading?: boolean;
   target?: "_blank" | "_self" | "_parent" | "_top";
   download?: boolean | string;
-  onClick?: () => void;
+  onClick?: (
+    e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>
+  ) => void;
   type?: "button" | "submit" | "reset";
   "data-color"?: "secondary" | "line" | "primary";
   "data-button"?: "disabled";
@@ -67,7 +69,14 @@ export default function ButtonCTA({
         data-button={dataButtonAttr}
         aria-disabled={isDisabled}
         aria-busy={loading}
-        onClick={isDisabled ? (e) => e.preventDefault() : onClick}
+        onClick={(e) => {
+          if (isDisabled) {
+            e.preventDefault();
+            return;
+          }
+
+          onClick?.(e);
+        }}
         {...args}
       >
         {buttonContent}

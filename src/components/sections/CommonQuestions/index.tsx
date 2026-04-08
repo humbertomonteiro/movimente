@@ -159,7 +159,21 @@ export default function CommonQuestions() {
             data-color="secondary"
             text="FALAR COM O TIME"
             link={whatsappLink}
-            target="_blank"
+            onClick={(e) => {
+              e.preventDefault();
+
+              const newTab = window.open("", "_blank");
+
+              window.fbq?.("track", "Lead", {
+                content_name: "whatsapp_contact",
+              });
+
+              setTimeout(() => {
+                if (newTab) {
+                  newTab.location.href = whatsappLink;
+                }
+              }, 300);
+            }}
           />
         </div>
 

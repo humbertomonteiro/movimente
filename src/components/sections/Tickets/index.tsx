@@ -209,11 +209,29 @@ export default function Tickets() {
                 {/* Botão */}
                 <div className={styles.buttonWrapper}>
                   <ButtonCTA
-                    target="_blank"
                     link={ticket.link}
                     text={ticket.buttonText}
                     data-color="primary"
                     disabled={ticket.disabled}
+                    onClick={(e) => {
+                      e.preventDefault();
+
+                      const newTab = window.open("", "_blank");
+
+                      window.fbq?.("track", "InitiateCheckout", {
+                        content_name: ticket.name,
+                        value: ticket.promoPrice || ticket.installmentPrice,
+                        currency: "BRL",
+                        content_ids: [ticket.id],
+                        content_category: "ticket",
+                      });
+
+                      setTimeout(() => {
+                        if (newTab) {
+                          newTab.location.href = ticket.link;
+                        }
+                      }, 300);
+                    }}
                   />
                   <a
                     className={styles.linkTicktHalfPrice}
