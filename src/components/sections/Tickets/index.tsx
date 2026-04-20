@@ -16,7 +16,7 @@ export default function Tickets() {
     {
       id: "movemente",
       name: "MOVEMENTE",
-      fullPrice: 997,
+      fullPrice: 797,
       installmentPrice: event.tickets.valueMovemente,
       promoPrice: 398.5, // ← promoção primeiros 100 ingressos
       promoInstallments: 12, // ← parcelas da promo
