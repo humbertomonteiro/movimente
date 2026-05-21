@@ -31,7 +31,8 @@ export default function Tickets() {
         "Kit Congressista",
         "Lugar na plenária Movemente",
       ],
-      link: "https://checkout2.bilheteriadigital.com/movemente-19-de-setembro",
+      // link: "https://checkout2.bilheteriadigital.com/movemente-19-de-setembro",
+      link: "https://chk.eduzz.com/39VK4XP5WR",
       buttonText: "GARANTIR AGORA",
       disabled: false,
     },
@@ -52,7 +53,8 @@ export default function Tickets() {
         "Acesso à área de expositores",
         "Lugar na plenária Conexão",
       ],
-      link: "https://checkout2.bilheteriadigital.com/movemente-19-de-setembro",
+      // link: "https://checkout2.bilheteriadigital.com/movemente-19-de-setembro",
+      link: "https://chk.eduzz.com/39YNZAE4WO",
       buttonText: "GARANTIR AGORA",
       disabled: false,
     },
@@ -76,7 +78,8 @@ export default function Tickets() {
         "Acesso ao lounge VIP (Facilidade para tirar foto com os palestrantes)",
         "Lugar na plenária Vip",
       ],
-      link: "https://checkout2.bilheteriadigital.com/movemente-19-de-setembro",
+      // link: "https://checkout2.bilheteriadigital.com/movemente-19-de-setembro",
+      link: "https://chk.eduzz.com/E9OGEV2KWB",
       buttonText: "GARANTIR AGORA",
       disabled: false,
     },
@@ -106,9 +109,11 @@ export default function Tickets() {
         {/* Grid de planos */}
         <div className={styles.grid}>
           {tickets.map((ticket, index) => {
-            const installmentValue = ticket.installmentPrice / 12;
+            const fee = 24.11;
+            const installmentValue =
+              (ticket.installmentPrice * (1 + fee / 100)) / 12;
             const promoInstallmentValue = ticket.promoPrice
-              ? ticket.promoPrice / ticket.promoInstallments
+              ? (ticket.promoPrice * (1 + fee / 100)) / ticket.promoInstallments
               : null;
 
             return (
