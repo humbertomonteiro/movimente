@@ -55,6 +55,7 @@ export default function Tickets() {
       ],
       // link: "https://checkout2.bilheteriadigital.com/movemente-19-de-setembro",
       link: "https://chk.eduzz.com/39YNZAE4WO",
+      linkHalfTicket: "https://chk.eduzz.com/G92K8E8XWE",
       buttonText: "GARANTIR AGORA",
       disabled: false,
     },
@@ -80,6 +81,7 @@ export default function Tickets() {
       ],
       // link: "https://checkout2.bilheteriadigital.com/movemente-19-de-setembro",
       link: "https://chk.eduzz.com/E9OGEV2KWB",
+      linkHalfTicket: "https://chk.eduzz.com/VWGNEZE407",
       buttonText: "GARANTIR AGORA",
       disabled: false,
     },
@@ -238,13 +240,15 @@ export default function Tickets() {
                       }, 300);
                     }}
                   />
-                  <a
-                    className={styles.linkTicktHalfPrice}
-                    target="_blank"
-                    href="https://checkout2.bilheteriadigital.com/movemente-19-de-setembro"
-                  >
-                    Adquirir Ingresso Meia
-                  </a>
+                  {ticket.name !== "MOVEMENTE" && (
+                    <a
+                      className={styles.linkTicktHalfPrice}
+                      target="_blank"
+                      href={ticket.linkHalfTicket}
+                    >
+                      Adquirir Ingresso Meia
+                    </a>
+                  )}
                 </div>
               </div>
             );
