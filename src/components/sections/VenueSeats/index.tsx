@@ -1,8 +1,8 @@
 import styles from "./VenueSeats.module.css";
 import ButtonCTA from "../../shared/ButtonCTA";
-import seatsImage from "../../../assets/imgs/shared/seats.png";
+import seatsImage from "../../../assets/imgs/shared/seats.jpg";
 import { FaTicketAlt } from "react-icons/fa";
-import { IoPeople } from "react-icons/io5";
+// import { IoPeople } from "react-icons/io5";
 import { FaWebAwesome } from "react-icons/fa6";
 
 export default function VenueSeats() {
@@ -50,7 +50,24 @@ export default function VenueSeats() {
           </p>
 
           {/* Cards dos setores */}
+
           <div className={styles.seatsGrid}>
+            <div
+              className={styles.seatCard}
+              data-aos="zoom-in"
+              data-aos-delay="300"
+            >
+              <div className={styles.seatIconWrapper}>
+                <FaWebAwesome />
+              </div>
+              <div>
+                <h3 className={styles.seatTitle}>Setor Protagonismo</h3>
+                <p className={styles.seatText}>
+                  Para quem quer viver o congresso com mais acesso e
+                  proximidade.
+                </p>
+              </div>
+            </div>
             <div
               className={styles.seatCard}
               data-aos="zoom-in"
@@ -60,14 +77,14 @@ export default function VenueSeats() {
                 <FaTicketAlt />
               </div>
               <div>
-                <h3 className={styles.seatTitle}>Ingresso Movemente</h3>
+                <h3 className={styles.seatTitle}>Setor Movemente</h3>
                 <p className={styles.seatText}>
                   Para quem quer participar e absorver o conteúdo do congresso.
                 </p>
               </div>
             </div>
 
-            <div
+            {/* <div
               className={styles.seatCard}
               data-aos="zoom-in"
               data-aos-delay="200"
@@ -82,24 +99,7 @@ export default function VenueSeats() {
                   físico.
                 </p>
               </div>
-            </div>
-
-            <div
-              className={styles.seatCard}
-              data-aos="zoom-in"
-              data-aos-delay="300"
-            >
-              <div className={styles.seatIconWrapper}>
-                <FaWebAwesome />
-              </div>
-              <div>
-                <h3 className={styles.seatTitle}>Ingresso VIP</h3>
-                <p className={styles.seatText}>
-                  Para quem quer viver o congresso com mais acesso e
-                  proximidade.
-                </p>
-              </div>
-            </div>
+            </div> */}
           </div>
 
           <div className={styles.ctaContainer}>

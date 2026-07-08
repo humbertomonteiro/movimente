@@ -195,15 +195,15 @@
 }
 
 .seatCard:nth-child(1) .seatIconWrapper {
-  background-color: #e200de;
+  background-color: #39aa36;
 }
 
 .seatCard:nth-child(2) .seatIconWrapper {
-  background-color: #0069dc;
+  background-color: #e200de;
 }
 
 .seatCard:nth-child(3) .seatIconWrapper {
-  background-color: #39aa36;
+  background-color: #0069dc;
 }
 
 .seatIcon {
