@@ -1,5 +1,5 @@
 import styles from "./Tickets.module.css";
-import { FaCheck, FaTicketAlt } from "react-icons/fa";
+import { FaCheck, FaCreditCard, FaTicketAlt } from "react-icons/fa";
 import { FaWebAwesome } from "react-icons/fa6";
 import { IoPeople } from "react-icons/io5";
 import ButtonCTA from "../../shared/ButtonCTA";
@@ -15,73 +15,65 @@ export default function Tickets() {
   const tickets = [
     {
       id: "movemente",
-      name: "MOVEMENTE",
-      fullPrice: 797,
+      name: "MOVIMENTE",
+      fullPrice: event.tickets.valueMovemente,
       installmentPrice: event.tickets.valueMovemente,
-      promoPrice: 398.5, // ← promoção primeiros 100 ingressos
-      promoInstallments: 12, // ← parcelas da promo
       icon: <FaTicketAlt className={styles.ticketIcon} />,
       socialNote:
-        "Para quem quer participar e absorver o conteúdo do congresso.",
+        "Ideal para quem deseja viver a experiência completa do congresso.",
       features: [
         "Acesso aos 2 dias de evento",
-        "Participação em todas as palestras da programação",
-        "Certificado digital enviado por e-mail",
+        "Participação em toda a programação de palestras",
+        "Certificado digital de participação",
         "Acesso à área de expositores",
         "Kit Congressista",
-        "Lugar na plenária Movemente",
       ],
-      // link: "https://checkout2.bilheteriadigital.com/movemente-19-de-setembro",
-      link: "https://chk.eduzz.com/39VK4XP5WR",
+      link: "https://www.sympla.com.br/movemente2026",
+      linkHalfTicket: "https://www.sympla.com.br/movemente2026",
+      halfPrice: event.tickets.valueHalf,
       buttonText: "GARANTIR AGORA",
       disabled: false,
     },
     {
-      id: "conexao",
-      name: "CONEXÃO",
-      fullPrice: 1200,
-      installmentPrice: event.tickets.valueConexao,
+      id: "social",
+      name: "MOVIMENTE SOCIAL",
+      fullPrice: event.tickets.valueSocial,
+      installmentPrice: event.tickets.valueSocial,
       icon: <IoPeople className={styles.ticketIcon} />,
       socialNote:
-        "Para quem quer levar a experiência do congresso também no físico.",
+        "Ingresso social: inclui doação obrigatória de 1kg de alimento não perecível na entrada.",
       features: [
         "Acesso aos 2 dias de evento",
-        "Participação em todas as palestras da programação",
-        "Certificado digital enviado por e-mail",
+        "Participação em toda a programação de palestras",
+        "Certificado digital de participação",
         "Acesso à área de expositores",
-        "Kit congressista",
-        "Acesso à área de expositores",
-        "Lugar na plenária Conexão",
+        "Kit Congressista",
       ],
-      // link: "https://checkout2.bilheteriadigital.com/movemente-19-de-setembro",
-      link: "https://chk.eduzz.com/39YNZAE4WO",
-      linkHalfTicket: "https://chk.eduzz.com/G92K8E8XWE",
+      link: "https://www.sympla.com.br/movemente2026",
       buttonText: "GARANTIR AGORA",
       disabled: false,
     },
     {
       id: "vip",
       name: "VIP",
-      fullPrice: 2500,
+      fullPrice: event.tickets.valueVip,
       installmentPrice: event.tickets.valueVip,
       icon: <FaWebAwesome className={styles.ticketIcon} />,
       socialNote:
-        "Para quem quer viver o congresso com mais acesso e proximidade.",
+        "Para quem deseja viver uma experiência exclusiva, com mais conforto, proximidade e benefícios.",
       features: [
         "Acesso aos 2 dias de evento",
-        "Participação em todas as palestras da programação",
-        "Certificado digital enviado por e-mail",
+        "Credenciamento exclusivo",
+        "Assentos nas primeiras fileiras, próximos ao palco",
+        "Participação em toda a programação de palestras",
+        "Certificado digital de participação",
+        "Kit Congressista VIP com brindes exclusivos",
         "Acesso à área de expositores",
-        "Kit do congressista exclusivo",
-        "Acesso à área de expositores",
-        "Networking qualificado com profissionais e convidados",
-        "Experiência diferenciada durante o evento",
-        "Acesso ao lounge VIP (Facilidade para tirar foto com os palestrantes)",
-        "Lugar na plenária Vip",
+        "Networking qualificado com palestrantes, profissionais e convidados",
+        "Acesso ao Lounge VIP (área de descanso, carregadores, água, café e coffee break nos dois dias)",
+        "Sessão de fotos com os palestrantes",
       ],
-      // link: "https://checkout2.bilheteriadigital.com/movemente-19-de-setembro",
-      link: "https://chk.eduzz.com/E9OGEV2KWB",
-      linkHalfTicket: "https://chk.eduzz.com/VWGNEZE407",
+      link: "https://www.sympla.com.br/movemente2026",
       buttonText: "GARANTIR AGORA",
       disabled: false,
     },
@@ -111,13 +103,6 @@ export default function Tickets() {
         {/* Grid de planos */}
         <div className={styles.grid}>
           {tickets.map((ticket, index) => {
-            const fee = 24.11;
-            const installmentValue =
-              (ticket.installmentPrice * (1 + fee / 100)) / 12;
-            const promoInstallmentValue = ticket.promoPrice
-              ? (ticket.promoPrice * (1 + fee / 100)) / ticket.promoInstallments
-              : null;
-
             return (
               <div
                 key={ticket.id}
@@ -125,8 +110,6 @@ export default function Tickets() {
                 data-aos="zoom-in"
                 data-aos-delay={index * 100}
               >
-                {/* Banner de promoção — apenas para o ticket com promoPrice */}
-
                 {/* Header */}
                 <div className={styles.cardHeader}>
                   <div className={styles.iconWrapper}>{ticket.icon}</div>
@@ -135,67 +118,16 @@ export default function Tickets() {
 
                 {/* Preço */}
                 <div className={styles.priceBox}>
-                  {ticket.promoPrice ? (
-                    <>
-                      {/* Preço original riscado */}
-                      <div className={styles.fullPriceAll}>
-                        De{" "}
-                        <span className={styles.fullPrice}>
-                          R$ {formatPrice(ticket.fullPrice)}
-                        </span>{" "}
-                        por
-                        {/* Ingresso social: R$ 398,50 e 1kg de alimento */}
-                      </div>
+                  <div className={styles.installmentHighlight}>
+                    <span className={styles.installmentValue}>
+                      R$ {formatPrice(ticket.installmentPrice)}
+                    </span>
+                  </div>
 
-                      {/* Parcelas da promoção em destaque */}
-                      <div className={styles.installmentHighlight}>
-                        <span className={styles.installmentValue}>
-                          <span className={styles.numberInstallments}>
-                            {ticket.promoInstallments}x
-                          </span>{" "}
-                          R$ {formatPrice(promoInstallmentValue)}
-                        </span>
-                      </div>
-
-                      <span className={styles.totalPrice}>
-                        ou R$ {formatPrice(ticket.promoPrice)} à vista
-                      </span>
-
-                      {/* Preço normal após promo */}
-                      <span className={styles.afterPromoNote}>
-                        Após os 100 primeiros: 12x de R${" "}
-                        {formatPrice(installmentValue)}
-                      </span>
-
-                      {ticket.promoPrice && (
-                        <div className={styles.promoBanner}>
-                          Oferta para os primeiros 100 ingressos Ingresso
-                          Social: R$ 398,50 + 1kg de Alimento
-                        </div>
-                      )}
-                    </>
-                  ) : (
-                    <>
-                      {/* <div className={styles.fullPriceAll}>
-                        De{" "}
-                        <span className={styles.fullPrice}>
-                          R$ {formatPrice(ticket.fullPrice)}
-                        </span>{" "}
-                        por
-                      </div> */}
-
-                      <div className={styles.installmentHighlight}>
-                        <span className={styles.installmentValue}>
-                          <span className={styles.numberInstallments}>12x</span>{" "}
-                          R$ {formatPrice(installmentValue)}
-                        </span>
-                      </div>
-
-                      <span className={styles.totalPrice}>
-                        ou R$ {formatPrice(ticket.installmentPrice)} à vista
-                      </span>
-                    </>
-                  )}
+                  <div className={styles.installmentNote}>
+                    <FaCreditCard className={styles.creditIcon} />
+                    <span>Em até 12x no cartão com juros</span>
+                  </div>
                 </div>
 
                 {/* Nota social */}
@@ -227,7 +159,7 @@ export default function Tickets() {
 
                       window.fbq?.("track", "InitiateCheckout", {
                         content_name: ticket.name,
-                        value: ticket.promoPrice || ticket.installmentPrice,
+                        value: ticket.installmentPrice,
                         currency: "BRL",
                         content_ids: [ticket.id],
                         content_category: "ticket",
@@ -240,7 +172,7 @@ export default function Tickets() {
                       }, 300);
                     }}
                   />
-                  {ticket.name !== "MOVEMENTE" && (
+                  {"linkHalfTicket" in ticket && ticket.linkHalfTicket && (
                     <a
                       className={styles.linkTicktHalfPrice}
                       target="_blank"
