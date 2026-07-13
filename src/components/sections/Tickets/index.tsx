@@ -15,7 +15,7 @@ export default function Tickets() {
   const tickets = [
     {
       id: "movemente",
-      name: "MOVIMENTE",
+      name: "MOVEMENTE",
       fullPrice: event.tickets.valueMovemente,
       installmentPrice: event.tickets.valueMovemente,
       icon: <FaTicketAlt className={styles.ticketIcon} />,
