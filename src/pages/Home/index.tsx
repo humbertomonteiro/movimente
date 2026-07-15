@@ -13,6 +13,7 @@ import AnimationCirclesBg from "../../components/shared/AnimationCirclesBg";
 import Supporters from "../../components/sections/Supporters";
 import FounderStory from "../../components/sections/FounderStory";
 import VenueSeats from "../../components/sections/VenueSeats";
+import BeSupporter from "../../components/sections/BeSupporter";
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
       <About />
       <VenueSeats />
       <Tickets />
+      <BeSupporter />
       <FounderStory />
       <Testimonials />
       <Location />
