@@ -1,8 +1,5 @@
 import styles from "./BeSupporter.module.css";
 
-// Substitua pelos caminhos reais das imagens
-import founderPhoto1 from "../../../assets/imgs/founder/vivian-photo-1.png";
-import founderPhoto2 from "../../../assets/imgs/founder/vivian-photo-2.png";
 import ButtonCTA from "../../shared/ButtonCTA";
 
 export default function BeSupporter() {
