@@ -14,6 +14,25 @@ export default function Tickets() {
 
   const tickets = [
     {
+      id: "social",
+      name: "MOVIMENTE SOCIAL",
+      fullPrice: event.tickets.valueSocial,
+      installmentPrice: event.tickets.valueSocial,
+      icon: <IoPeople className={styles.ticketIcon} />,
+      socialNote:
+        "Ingresso social: inclui doação obrigatória de 1kg de alimento não perecível na entrada.",
+      features: [
+        "Acesso aos 2 dias de evento",
+        "Participação em toda a programação de palestras",
+        "Certificado digital de participação",
+        "Acesso à área de expositores",
+        "Kit Congressista",
+      ],
+      link: "https://www.sympla.com.br/movemente2026",
+      buttonText: "GARANTIR AGORA",
+      disabled: false,
+    },
+    {
       id: "movemente",
       name: "MOVEMENTE",
       fullPrice: event.tickets.valueMovemente,
@@ -34,25 +53,7 @@ export default function Tickets() {
       buttonText: "GARANTIR AGORA",
       disabled: false,
     },
-    {
-      id: "social",
-      name: "MOVIMENTE SOCIAL",
-      fullPrice: event.tickets.valueSocial,
-      installmentPrice: event.tickets.valueSocial,
-      icon: <IoPeople className={styles.ticketIcon} />,
-      socialNote:
-        "Ingresso social: inclui doação obrigatória de 1kg de alimento não perecível na entrada.",
-      features: [
-        "Acesso aos 2 dias de evento",
-        "Participação em toda a programação de palestras",
-        "Certificado digital de participação",
-        "Acesso à área de expositores",
-        "Kit Congressista",
-      ],
-      link: "https://www.sympla.com.br/movemente2026",
-      buttonText: "GARANTIR AGORA",
-      disabled: false,
-    },
+
     {
       id: "vip",
       name: "VIP",
@@ -173,13 +174,38 @@ export default function Tickets() {
                     }}
                   />
                   {"linkHalfTicket" in ticket && ticket.linkHalfTicket && (
-                    <a
-                      className={styles.linkTicktHalfPrice}
-                      target="_blank"
-                      href={ticket.linkHalfTicket}
-                    >
-                      Adquirir Ingresso Meia
-                    </a>
+                    // <a
+                    //   className={styles.linkTicktHalfPrice}
+                    //   target="_blank"
+                    //   href={ticket.linkHalfTicket}
+                    // >
+                    //   Adquirir Ingresso Meia
+                    // </a>
+                    <ButtonCTA
+                      link={ticket.link}
+                      text={"MEIA ENTRADA"}
+                      data-color="primary"
+                      disabled={ticket.disabled}
+                      onClick={(e) => {
+                        e.preventDefault();
+
+                        const newTab = window.open("", "_blank");
+
+                        window.fbq?.("track", "InitiateCheckout", {
+                          content_name: ticket.name,
+                          value: ticket.installmentPrice,
+                          currency: "BRL",
+                          content_ids: [ticket.id],
+                          content_category: "ticket",
+                        });
+
+                        setTimeout(() => {
+                          if (newTab) {
+                            newTab.location.href = ticket.link;
+                          }
+                        }, 300);
+                      }}
+                    />
                   )}
                 </div>
               </div>

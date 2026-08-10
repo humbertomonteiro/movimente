@@ -246,6 +246,9 @@
 /* Botão wrapper - sempre visível */
 .buttonWrapper {
   margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .linkTicktHalfPrice {
