@@ -27,6 +27,8 @@ import jvDePaivaVideo from "../../../assets/videos/jv-paiva.mp4";
 import fernandaBande from "../../../assets/imgs/speakers/fernanda-bande.png";
 import fernandaBandeVideo from "../../../assets/videos/fernanda-bande.mp4";
 
+import patriciaDaSilva from "../../../assets/imgs/speakers/patricia-da-silva-sousa.jpeg";
+
 // React Icons para redes sociais
 import {
   FaLinkedinIn,
@@ -153,6 +155,24 @@ Expertise: terapeuta ocupacional com foco em desenvolvimento infantil,seletivida
     social: {
       website: "https://carolbitar.com.br",
       instagram: "https://www.instagram.com/carolbitar_/",
+    },
+  },
+  {
+    id: "patricia-da-silva",
+    name: "Patrícia da Silva Sousa",
+    role: "Neuropediatra e Neurofisiologista Clínica ",
+    bio: `Sou Neuropediatra e Neurofisiologista Clínica 
+Responsável pelo ambulatório de epilepsia do Estado do Maranhão 
+Residência em Neurologia Infantil - UNICAMP
+Doutorado em Neurociências - UNIFESP/UNIPETE
+Título de Especialista em Neurologia pela ABN
+Titulo de Especialista em Neurofisiologia - Eletroencefalografia - SBNC`,
+    photo: patriciaDaSilva,
+    expertise: ["M.D. Ph.D."],
+    // videoUrl: carolineBitarVideo,
+    social: {
+      // website: "https://carolbitar.com.br",
+      instagram: "https://www.instagram.com/patriciasousa.neuropediatra/",
     },
   },
 ];
