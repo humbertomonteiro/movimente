@@ -27,6 +27,9 @@ import jvDePaivaVideo from "../../../assets/videos/jv-paiva.mp4";
 import fernandaBande from "../../../assets/imgs/speakers/fernanda-bande.png";
 import fernandaBandeVideo from "../../../assets/videos/fernanda-bande.mp4";
 
+import kilviaCila from "../../../assets/imgs/speakers/kilvia-cila.jpeg";
+import kilviaCilaVideo from "../../../assets/videos/kilvia-cila.mp4";
+
 import patriciaDaSilva from "../../../assets/imgs/speakers/patricia-da-silva-sousa.jpeg";
 
 // React Icons para redes sociais
@@ -152,6 +155,23 @@ Expertise: terapeuta ocupacional com foco em desenvolvimento infantil,seletivida
     photo: carolineBitar,
     expertise: ["Especialista em Comportamento"],
     videoUrl: carolineBitarVideo,
+    social: {
+      website: "https://carolbitar.com.br",
+      instagram: "https://www.instagram.com/carolbitar_/",
+    },
+  },
+  {
+    id: "kilvia-cila",
+    name: "Kilva Cila Bezerra Garcia Matos",
+    role: "Neuropsicopedagoga",
+    bio: `Profissional com 20 anos de experiência na área da Educação, com uma trajetória marcada pela atuação pedagógica, gestão educacional e acompanhamento dos processos de aprendizagem e desenvolvimento.
+Pedagoga, pós-graduada em Psicopedagogia e em Neuropsicopedagogia, com certificação Apple Teacher. Ao longo de sua carreira, atuou como professora alfabetizadora e coordenadora pedagógica, construindo ampla experiência no desenvolvimento infantil, nos processos de alfabetização e nas diferentes demandas relacionadas à aprendizagem.
+Atualmente, atua em consultório clínico, realizando avaliação, acompanhamento e intervenção psicopedagógica e neuropsicopedagógica, especialmente em casos de dificuldades e transtornos de aprendizagem, TDAH, dislexia, discalculia, deficiência intelectual, entre outras demandas que podem impactar o desenvolvimento cognitivo, acadêmico e escolar.
+Sua prática profissional é pautada em um olhar individualizado, humanizado e fundamentado, buscando compreender cada paciente em sua singularidade, identificar potencialidades e dificuldades e desenvolver estratégias que favoreçam o aprendizado, a autonomia e o desenvolvimento integral.
+20 anos de experiência dedicados à Educação e ao propósito de transformar dificuldades em possibilidades de aprendizagem.`,
+    photo: kilviaCila,
+    expertise: ["Pedagoga", "Psicopedagoga", "Neuropsicopedagoga"],
+    videoUrl: kilviaCilaVideo,
     social: {
       website: "https://carolbitar.com.br",
       instagram: "https://www.instagram.com/carolbitar_/",
