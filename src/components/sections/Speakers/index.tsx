@@ -24,9 +24,6 @@ import carolineBitarVideo from "../../../assets/videos/caroline-bitar.mp4";
 import jvDePaiva from "../../../assets/imgs/speakers/jv-paiva.png";
 import jvDePaivaVideo from "../../../assets/videos/jv-paiva.mp4";
 
-import fernandaBande from "../../../assets/imgs/speakers/fernanda-bande.png";
-import fernandaBandeVideo from "../../../assets/videos/fernanda-bande.mp4";
-
 import kilviaCila from "../../../assets/imgs/speakers/kilvia-cila.jpeg";
 import kilviaCilaVideo from "../../../assets/videos/kilvia-cila.mp4";
 
@@ -105,20 +102,7 @@ Atua como professora universitária, pesquisadora e clínica, com vasta experiê
       website: "www.nadiabossa.com",
     },
   },
-  {
-    id: "fernanda-bande",
-    name: "Fernanda Bande",
-    role: "Apresentadora e influenciadora digita",
-    bio: `Apresentadora, empreendedora e uma das vozes mais autênticas da maternidade atípica no Brasil. Mãe do Marcelo, diagnosticado com autismo ainda na infância, Fernanda utilizou sua visibilidade nacional no BBB 24 para humanizar os desafios e as vitórias do Transtorno do Espectro Autista (TEA). Hoje, ela compartilha sua trajetória de "choque de realidade" e aprendizado, defendendo que a informação é a principal ferramenta para derrubar preconceitos e garantir o acolhimento necessário para as famílias e crianças neurodivergentes.`,
-    photo: fernandaBande,
-    expertise: ["Mãe Atípica", "Ex BBB"],
-    videoUrl: fernandaBandeVideo,
-    social: {
-      instagram:
-        "https://www.instagram.com/nandabande?igsh=MTV4cTExYzFhN25wcA%3D%3D",
-      facebook: " https://www.facebook.com/profile.php?id=61556441443406",
-    },
-  },
+
   {
     id: "gabriela-ferro",
     name: "Gabriela Ferro Aguiar",
