@@ -4,6 +4,7 @@ import styles from "./Supporters.module.css";
 import logoApoiador1 from "../../../assets/imgs/supporters/clara-comunicação.png";
 import logoApoiador2 from "../../../assets/imgs/supporters/viva-aprender.jpg";
 import logoPatrocinador1 from "../../../assets/imgs/supporters/governo-maranhao.png";
+import logoPotiguar from "../../../assets/imgs/supporters/Potiguar.jpeg";
 import logoVeiculo1 from "../../../assets/imgs/supporters/grupo-mirante.jpg";
 import logoVeiculo2 from "../../../assets/imgs/supporters/imirante.jpg";
 import nutrimax from "../../../assets/imgs/supporters/nutrimax.png";
@@ -15,14 +16,19 @@ export default function Supporters() {
         <h2 className={styles.title}>Quem faz o Movemente acontecer</h2>
 
         {/* Patrocinador */}
+        <h3 className={styles.tag}>Patrocinadores</h3>
         <div className={styles.patrocinador}>
-          <span className={styles.tag}>Patrocinadores</span>
           <img
             src={logoPatrocinador1}
             alt="Governo do Maranhão"
             className={styles.logoGrande}
           />
           <img src={nutrimax} alt="Nutrimax" className={styles.logoGrande} />
+          <img
+            src={logoPotiguar}
+            alt="Potiguar"
+            className={styles.logoGrande}
+          />
         </div>
 
         {/* Apoiadores e Veículos lado a lado */}
