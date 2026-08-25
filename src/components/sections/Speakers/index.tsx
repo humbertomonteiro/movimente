@@ -27,6 +27,9 @@ import jvDePaivaVideo from "../../../assets/videos/jv-paiva.mp4";
 import kilviaCila from "../../../assets/imgs/speakers/kilvia-cila.jpeg";
 import kilviaCilaVideo from "../../../assets/videos/kilvia-cila.mp4";
 
+import maxianeRodrigues from "../../../assets/imgs/speakers/maxiane-rodrigues.jpeg";
+// import kilviaCilaVideo from "../../../assets/videos/kilvia-cila.mp4";
+
 import patriciaDaSilva from "../../../assets/imgs/speakers/patricia-da-silva-sousa.jpeg";
 
 // React Icons para redes sociais
@@ -159,6 +162,18 @@ Sua prática profissional é pautada em um olhar individualizado, humanizado e f
     social: {
       website: "https://carolbitar.com.br",
       instagram: "https://www.instagram.com/carolbitar_/",
+    },
+  },
+  {
+    id: "maxiane-rodrigues",
+    name: "Maxiane Rodrigues",
+    role: "Mãe atípica",
+    bio: `Natural de Nazaré da Mata (PE), Maxiane é formada em História, com pós-graduação em História do Nordeste pela Universidade Católica de Pernambuco (UNICAP). Atuou por 8 anos como professora de História e Geografia antes de construir sua carreira como comunicadora e influenciadora, com atuação em moda, beleza e maternidade. Mãe de Joaquim, diagnosticado com Autismo Nível 1 de Suporte em 2026, passou a compartilhar também sua experiência com a maternidade atípica, trazendo para sua comunidade os desafios, aprendizados e transformações que fazem parte dessa nova fase de sua vida`,
+    photo: maxianeRodrigues,
+    expertise: ["Mãe atípica"],
+    // videoUrl: kilviaCilaVideo,
+    social: {
+      instagram: "https://www.instagram.com/maxiane/",
     },
   },
   {
