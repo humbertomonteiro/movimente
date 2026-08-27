@@ -32,6 +32,8 @@ import maxianeRodrigues from "../../../assets/imgs/speakers/maxiane-rodrigues.jp
 
 import patriciaDaSilva from "../../../assets/imgs/speakers/patricia-da-silva-sousa.jpeg";
 
+import emiliaGama from "../../../assets/imgs/speakers/emilia-gama.jpeg";
+
 // React Icons para redes sociais
 import {
   FaLinkedinIn,
@@ -192,6 +194,19 @@ Titulo de Especialista em Neurofisiologia - Eletroencefalografia - SBNC`,
     social: {
       // website: "https://carolbitar.com.br",
       instagram: "https://www.instagram.com/patriciasousa.neuropediatra/",
+    },
+  },
+  {
+    id: "emilia-gama",
+    name: "Emília Gama",
+    role: "especialista em Saúde Mental e TEA",
+    bio: `Assistente social, especialista em Saúde Mental e TEA, Mestre em Saúde, doutoranda em Educação e diretora pedagógica do IEPSIS e Mãe do Miguel, que tem síndrome de Down e Autismo.`,
+    photo: emiliaGama,
+    expertise: ["Assistente social"],
+    // videoUrl: carolineBitarVideo,
+    social: {
+      // website: "https://carolbitar.com.br",
+      instagram: "https://www.instagram.com/emilia_gama/",
     },
   },
 ];
