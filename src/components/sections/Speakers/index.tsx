@@ -34,6 +34,10 @@ import patriciaDaSilva from "../../../assets/imgs/speakers/patricia-da-silva-sou
 
 import emiliaGama from "../../../assets/imgs/speakers/emilia-gama.jpeg";
 
+import cyrenePiazera from "../../../assets/imgs/speakers/cyrene-piazera.jpeg";
+import nathaliaLua from "../../../assets/imgs/speakers/nathalia-lua.jpeg";
+import cidinhoMarques from "../../../assets/imgs/speakers/cidinho-marques.jpeg";
+
 // React Icons para redes sociais
 import {
   FaLinkedinIn,
@@ -199,7 +203,7 @@ Titulo de Especialista em Neurofisiologia - Eletroencefalografia - SBNC`,
   {
     id: "emilia-gama",
     name: "Emília Gama",
-    role: "especialista em Saúde Mental e TEA",
+    role: "Especialista em Saúde Mental e TEA",
     bio: `Assistente social, especialista em Saúde Mental e TEA, Mestre em Saúde, doutoranda em Educação e diretora pedagógica do IEPSIS e Mãe do Miguel, que tem síndrome de Down e Autismo.`,
     photo: emiliaGama,
     expertise: ["Assistente social"],
@@ -207,6 +211,55 @@ Titulo de Especialista em Neurofisiologia - Eletroencefalografia - SBNC`,
     social: {
       // website: "https://carolbitar.com.br",
       instagram: "https://www.instagram.com/emilia_gama/",
+    },
+  },
+  {
+    id: "cyrene-piazera",
+    name: "Cyrene Piazera Silva Costa",
+    role: "Cirurgiã-dentista",
+    bio: `Cyrene Piazera Silva Costa - Cirurgiã-dentista, mestre e doutora em Odontologia, especialista em Odontologia para Pacientes com Necessidades Especiais, Odontologia Hospitalar e Odontopediatria E habilitada em Laserterapia e Sedação Consciente. Professora do Curso de Odontologia e pesquisadora permanente do Programa de Pós-Graduação em Odontologia da Universidade Ceuma, com atuação em Odontologia para Pacientes com Necessidades Especiais e Odontologia Hospitalar. Coordenadora do Programa de Residência Multiprofissional Atenção em UTI Adulto no Hospital Dr. Carlos Macieira. Cirurgiã-dentista responsável pelo atendimento de odontologia para pacientes com Necessidades Especiais do Centro de Especialidades Odontológicas "Sorrir Praia Grande". Co-fundadora da Milk Odontologia Afetiva.`,
+    photo: cyrenePiazera,
+    expertise: [
+      "Especialista em Odontologia para Pacientes com Necessidades Especiais",
+    ],
+    // videoUrl: carolineBitarVideo,
+    social: {
+      // website: "https://carolbitar.com.br",
+      instagram: "https://www.instagram.com/milk.odonto/",
+    },
+  },
+  {
+    id: "nathalia-lua",
+    name: "Nathália Lua Soares de Anchieta",
+    role: "Cirurgiã-dentista",
+    bio: `Nathália Lua Soares de Anchieta - Cirurgiã-dentista, especialista em docência do ensino técnico e superior e Odontologia para pacientes com Necessidades Especiais e habilitada em Laserterapia e Sedação consciente. Cirurgiã-dentista assistencial e Preceptora  no Programa de Residência Multiprofissional Atenção em UTI Adulto no Hospital Dr. Carlos Macieira. Preceptora do Graduação em Odontologia da UNDB. Co-fundadora da Milk Odontologia Afetiva.`,
+    photo: nathaliaLua,
+    expertise: [
+      "Especialista em Odontologia para Pacientes com Necessidades Especiai",
+    ],
+    // videoUrl: carolineBitarVideo,
+    social: {
+      // website: "https://carolbitar.com.br",
+      instagram: "https://www.instagram.com/nathlua/",
+    },
+  },
+  {
+    id: "cidinho-marques",
+    name: "Cidinho Marques",
+    role: "Pedagogo Mestre em Educação",
+    bio: `Pedagogo
+Mestre em Educação 
+Pós graduado em Neuropsicologia 
+Psicalnalista e especialista em Psicologia Positiva .
+Doutorando em Psicologia 
+Escritor (5 livros)
+Palestrante`,
+    photo: cidinhoMarques,
+    expertise: ["Doutorando em Psicologia"],
+    // videoUrl: carolineBitarVideo,
+    social: {
+      // website: "https://carolbitar.com.br",
+      instagram: "https://www.instagram.com/psi.cidinhomarques/",
     },
   },
 ];

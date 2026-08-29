@@ -14,8 +14,48 @@ export default function Tickets() {
 
   const tickets = [
     {
+      id: "movemente",
+      name: "MOVEMENTE - (Meia)",
+      fullPrice: event.tickets.valueHalf,
+      installmentPrice: event.tickets.valueHalf,
+      icon: <FaTicketAlt className={styles.ticketIcon} />,
+      socialNote:
+        "Ideal para quem deseja viver a experiência completa do congresso.",
+      features: [
+        "Acesso aos 2 dias de evento",
+        "Participação em toda a programação de palestras",
+        "Certificado digital de participação",
+        "Acesso à área de expositores",
+        "Kit Congressista",
+      ],
+      link: "https://www.sympla.com.br/movemente2026",
+      halfPrice: event.tickets.valueHalf,
+      buttonText: "GARANTIR AGORA",
+      disabled: false,
+    },
+    {
+      id: "movemente",
+      name: "MOVEMENTE - (Inteira)",
+      fullPrice: event.tickets.valueMovemente,
+      installmentPrice: event.tickets.valueMovemente,
+      icon: <FaTicketAlt className={styles.ticketIcon} />,
+      socialNote:
+        "Ideal para quem deseja viver a experiência completa do congresso.",
+      features: [
+        "Acesso aos 2 dias de evento",
+        "Participação em toda a programação de palestras",
+        "Certificado digital de participação",
+        "Acesso à área de expositores",
+        "Kit Congressista",
+      ],
+      link: "https://www.sympla.com.br/movemente2026",
+      halfPrice: event.tickets.valueHalf,
+      buttonText: "GARANTIR AGORA",
+      disabled: false,
+    },
+    {
       id: "social",
-      name: "MOVIMENTE SOCIAL",
+      name: "MOVIMENTE - (Promocional)",
       fullPrice: event.tickets.valueSocial,
       installmentPrice: event.tickets.valueSocial,
       icon: <IoPeople className={styles.ticketIcon} />,
@@ -32,52 +72,30 @@ export default function Tickets() {
       buttonText: "GARANTIR AGORA",
       disabled: false,
     },
-    {
-      id: "movemente",
-      name: "MOVEMENTE",
-      fullPrice: event.tickets.valueMovemente,
-      installmentPrice: event.tickets.valueMovemente,
-      icon: <FaTicketAlt className={styles.ticketIcon} />,
-      socialNote:
-        "Ideal para quem deseja viver a experiência completa do congresso.",
-      features: [
-        "Acesso aos 2 dias de evento",
-        "Participação em toda a programação de palestras",
-        "Certificado digital de participação",
-        "Acesso à área de expositores",
-        "Kit Congressista",
-      ],
-      link: "https://www.sympla.com.br/movemente2026",
-      linkHalfTicket: "https://www.sympla.com.br/movemente2026",
-      halfPrice: event.tickets.valueHalf,
-      buttonText: "GARANTIR AGORA",
-      disabled: false,
-    },
-
-    {
-      id: "vip",
-      name: "VIP",
-      fullPrice: event.tickets.valueVip,
-      installmentPrice: event.tickets.valueVip,
-      icon: <FaWebAwesome className={styles.ticketIcon} />,
-      socialNote:
-        "Para quem deseja viver uma experiência exclusiva, com mais conforto, proximidade e benefícios.",
-      features: [
-        "Acesso aos 2 dias de evento",
-        "Credenciamento exclusivo",
-        "Assentos nas primeiras fileiras, próximos ao palco",
-        "Participação em toda a programação de palestras",
-        "Certificado digital de participação",
-        "Kit Congressista VIP com brindes exclusivos",
-        "Acesso à área de expositores",
-        "Networking qualificado com palestrantes, profissionais e convidados",
-        "Acesso ao Lounge VIP (área de descanso, carregadores, água, café e coffee break nos dois dias)",
-        "Sessão de fotos com os palestrantes",
-      ],
-      link: "https://www.sympla.com.br/movemente2026",
-      buttonText: "GARANTIR AGORA",
-      disabled: false,
-    },
+    // {
+    //   id: "vip",
+    //   name: "VIP",
+    //   fullPrice: event.tickets.valueVip,
+    //   installmentPrice: event.tickets.valueVip,
+    //   icon: <FaWebAwesome className={styles.ticketIcon} />,
+    //   socialNote:
+    //     "Para quem deseja viver uma experiência exclusiva, com mais conforto, proximidade e benefícios.",
+    //   features: [
+    //     "Acesso aos 2 dias de evento",
+    //     "Credenciamento exclusivo",
+    //     "Assentos nas primeiras fileiras, próximos ao palco",
+    //     "Participação em toda a programação de palestras",
+    //     "Certificado digital de participação",
+    //     "Kit Congressista VIP com brindes exclusivos",
+    //     "Acesso à área de expositores",
+    //     "Networking qualificado com palestrantes, profissionais e convidados",
+    //     "Acesso ao Lounge VIP (área de descanso, carregadores, água, café e coffee break nos dois dias)",
+    //     "Sessão de fotos com os palestrantes",
+    //   ],
+    //   link: "https://www.sympla.com.br/movemente2026",
+    //   buttonText: "GARANTIR AGORA",
+    //   disabled: false,
+    // },
   ];
 
   const formatPrice = (price: any) => {
@@ -173,14 +191,8 @@ export default function Tickets() {
                       }, 300);
                     }}
                   />
-                  {"linkHalfTicket" in ticket && ticket.linkHalfTicket && (
-                    // <a
-                    //   className={styles.linkTicktHalfPrice}
-                    //   target="_blank"
-                    //   href={ticket.linkHalfTicket}
-                    // >
-                    //   Adquirir Ingresso Meia
-                    // </a>
+                  {/* {"linkHalfTicket" in ticket && ticket.linkHalfTicket && (
+            
                     <ButtonCTA
                       link={ticket.link}
                       text={"MEIA ENTRADA"}
@@ -206,7 +218,7 @@ export default function Tickets() {
                         }, 300);
                       }}
                     />
-                  )}
+                  )} */}
                 </div>
               </div>
             );
