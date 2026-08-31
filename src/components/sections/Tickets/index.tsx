@@ -1,6 +1,6 @@
 import styles from "./Tickets.module.css";
 import { FaCheck, FaCreditCard, FaTicketAlt } from "react-icons/fa";
-import { FaWebAwesome } from "react-icons/fa6";
+// import { FaWebAwesome } from "react-icons/fa6";
 import { IoPeople } from "react-icons/io5";
 import ButtonCTA from "../../shared/ButtonCTA";
 import GridOverlay from "../../shared/GridOverlay";
