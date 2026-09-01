@@ -1,7 +1,7 @@
 import styles from "./Tickets.module.css";
 import { FaCheck, FaCreditCard, FaTicketAlt } from "react-icons/fa";
 // import { FaWebAwesome } from "react-icons/fa6";
-import { IoPeople } from "react-icons/io5";
+// import { IoPeople } from "react-icons/io5";
 import ButtonCTA from "../../shared/ButtonCTA";
 import GridOverlay from "../../shared/GridOverlay";
 
@@ -53,25 +53,25 @@ export default function Tickets() {
       buttonText: "GARANTIR AGORA",
       disabled: false,
     },
-    {
-      id: "social",
-      name: "MOVIMENTE - (Promocional)",
-      fullPrice: event.tickets.valueSocial,
-      installmentPrice: event.tickets.valueSocial,
-      icon: <IoPeople className={styles.ticketIcon} />,
-      socialNote:
-        "Ingresso social: inclui doação obrigatória de 1kg de alimento não perecível na entrada.",
-      features: [
-        "Acesso aos 2 dias de evento",
-        "Participação em toda a programação de palestras",
-        "Certificado digital de participação",
-        "Acesso à área de expositores",
-        "Kit Congressista",
-      ],
-      link: "https://www.sympla.com.br/movemente2026",
-      buttonText: "GARANTIR AGORA",
-      disabled: false,
-    },
+    // {
+    //   id: "social",
+    //   name: "MOVIMENTE - (Promocional)",
+    //   fullPrice: event.tickets.valueSocial,
+    //   installmentPrice: event.tickets.valueSocial,
+    //   icon: <IoPeople className={styles.ticketIcon} />,
+    //   socialNote:
+    //     "Ingresso social: inclui doação obrigatória de 1kg de alimento não perecível na entrada.",
+    //   features: [
+    //     "Acesso aos 2 dias de evento",
+    //     "Participação em toda a programação de palestras",
+    //     "Certificado digital de participação",
+    //     "Acesso à área de expositores",
+    //     "Kit Congressista",
+    //   ],
+    //   link: "https://www.sympla.com.br/movemente2026",
+    //   buttonText: "GARANTIR AGORA",
+    //   disabled: false,
+    // },
     // {
     //   id: "vip",
     //   name: "VIP",
